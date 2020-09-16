@@ -1,0 +1,60 @@
+<template>
+    
+    <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label"
+            style="font-family:SalesforceSans;font-size:16px;line-height:20px;color:#000000;">Confirmation Methods:
+        </legend>
+        <div class="slds-form-element__control">
+            <div class="slds-visual-picker slds-visual-picker_vertical">
+                <input type="radio" id="visual-picker-91" value="visual-picker-91" name="options" />
+                <label for="visual-picker-91">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span>
+                            <span class="slds-text-title slds-text-align_center"
+                                style="font-family:SalesforceSans;font-size:14px;line-height:20px;color:#000000;text-align: center;"><b>SMS
+                                    / Text Message</b></span>
+                            <span class="slds-text-title slds-text-align_center"
+                                style="font-family:SalesforceSans;font-size:14px;line-height:20px;color:#000000;text-align: center;">({phoneNumberDetails})</span>
+                        </span>
+                    </span>
+                    <span class="slds-icon_container slds-visual-picker__text-check">
+                        <lightning-icon icon-name="utility:check" size="x-small" variant="inverse"></lightning-icon>
+                    </span>
+                </label>
+            </div>
+            <div class="slds-visual-picker slds-visual-picker_vertical">
+                <input type="radio" id="visual-picker-92" value="visual-picker-92" name="options" />
+                <label for="visual-picker-92">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span>
+                            <span class="slds-text-title slds-text-align_center"
+                                style="font-family:SalesforceSans;font-size:14px;line-height:20px;color:#000000;text-align: center;"><b>Credit
+                                    Card Verification</b></span>
+                            <span class="slds-text-title slds-text-align_center"
+                                style="font-family:SalesforceSans;font-size:14px;line-height:20px;color:#000000;text-align: center;">(****
+                                **** **** {crediCardDetails})</span>
+                        </span>
+                    </span>
+                    <span class="slds-icon_container slds-visual-picker__text-check">
+                        <lightning-icon icon-name="utility:check" size="x-small" variant="inverse"></lightning-icon>
+                    </span>
+                </label>
+            </div>
+            <div class="slds-visual-picker slds-visual-picker_vertical">
+                <input type="radio" id="visual-picker-93" value="visual-picker-93" name="options" />
+                <label for="visual-picker-93">
+                    <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+                        <span>
+                            <span class="slds-text-title slds-text-align_center"
+                                style="font-family:SalesforceSans;font-size:14px;line-height:20px;color:#000000;text-align: center;"><b>Knowledge
+                                    Based Authentication</b></span>
+                        </span>
+                    </span>
+                    <span class="slds-icon_container slds-visual-picker__text-check">
+                        <lightning-icon icon-name="utility:check" size="x-small" variant="inverse"></lightning-icon>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</template>

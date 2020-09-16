@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Access change associated with the limitation --></help>
+    <label><!-- Account Limitation --></label>
+    <name>Account_Limitation__c</name>
+    <relationshipLabel><!-- Limitation Access Changes --></relationshipLabel>
+</CustomFieldTranslation>

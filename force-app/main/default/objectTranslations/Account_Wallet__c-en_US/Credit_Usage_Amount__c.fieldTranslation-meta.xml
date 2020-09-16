@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Amount of PayPal credit used by the customer --></help>
+    <label><!-- Credit Usage Amount --></label>
+    <name>Credit_Usage_Amount__c</name>
+</CustomFieldTranslation>

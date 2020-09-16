@@ -1,0 +1,69 @@
+<template>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+        <div class="slds-modal__container add-number-container">
+            <header class="slds-modal__header add-number-header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse add-number-close-button" title="Close" onclick={closeClick}>
+                    <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate add-number-header-label"><b>Add a New Number</b></h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div class = "add-number-panel">
+                    <div class="slds-grid slds-gutters slds-p-around_medium">
+                        <div class="slds-col slds-size_1-of-6 add-number-panel-icon">
+                            <div class=" slds-p-around_medium">
+                                <lightning-icon icon-name="utility:quick_text" size="large"></lightning-icon>
+                            </div>
+                        </div>                        
+                        <div class="slds-col slds-size_5-of-6">
+                            <div class="slds-border_left slds-p-around_x-small add-number-verbatim">
+                                <h6>PLEASE READ VERBATIM</h6>
+                                <label>
+                                    "By providing this mobile number, you give us permission to contact 
+                                    you about your PayPal branded accounts using automated call or texts to: Service your accounts, 
+                                    investigate fraud, or collect a debt, but not for telemarketing. 
+                                    You may decline to receive automated calls or texts and still use your PayPal 
+                                    handed accounts." Do you agree?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-number-ack-section">
+                    <div class="slds-grid slds-gutters slds-p-around_medium">
+                        <div class="slds-col slds-size_1-of-6 ">
+                        </div>
+                        <div class="slds-col slds-size_5-of-6">
+                            <div class="slds-p-around_x-small">
+                                <input type="checkbox" class="slds-col"/>
+                                <label class="slds-col">Click here if the customer agrees to receiving SMS and auto-dail contact from Paypal.</label>
+                            </div>
+                            <div class="slds-p-around_x-small">
+                                <input type="checkbox" class="slds-col"/>
+                                <label class="slds-col">Acknowledgement that you have read the guidance to the customer.</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="add-number-hr">
+                <div class="slds-grid slds-gutters slds-m-around_xxx-small">
+                    <div class="slds-col slds-size_1-of-6">
+                    </div>
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-p-around_x-small">
+                            <label class="add-number-text">New Number</label>
+                            <br>
+                            <input class="add-number-input" id="newNumber" onchange={onAddNumber}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="slds-modal__footer add-number-footer">
+                <button class="slds-button slds-button_neutral add-number-cancel" onclick={closeClick}>Cancel</button>
+                <button class="slds-button slds-button_brand add-number-submit" onclick={verifyClick}>Verify</button>
+            </footer>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

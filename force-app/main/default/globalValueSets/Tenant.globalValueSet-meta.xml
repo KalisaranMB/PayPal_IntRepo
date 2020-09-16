@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>PAYPAL</fullName>
+        <default>true</default>
+        <label>PAYPAL</label>
+    </customValue>
+    <description>Tenant name in the multi-tenant shared environment. At this point of time, PayPal is the only tenant, but soon we will be adding subsidiaries.</description>
+    <masterLabel>Tenant</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

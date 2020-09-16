@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- A typical batch will execute as multiple transactions with the scope size set by the caller. This is the total number of transactions happened within a batch. --></help>
+    <label><!-- Number of Apex Transactions --></label>
+    <name>Number_of_Apex_Transactions__c</name>
+</CustomFieldTranslation>

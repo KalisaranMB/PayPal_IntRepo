@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prefetch_Loaded_Time__c</fullName>
+    <description>This is a general bucket that indicates when the Prefetch data was last pushed to Salesforce platform. Please note that it is common to think this time will match with loaded time of all individual child objects, which could be true in certain scenarios, but there are possibilities where certain data categories will have different time than this.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a general bucket that indicates when the Prefetch data was last pushed to Salesforce platform. Please note that it is common to think this time will match with loaded time of all individual child objects, which could be true in certain scenarios,</inlineHelpText>
+    <label>Prefetch Loaded Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>DateTime</type>
+</CustomField>

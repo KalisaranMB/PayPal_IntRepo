@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type__c</fullName>
+    <description>Account Type - like Personal / Premier / Business in the tenant side. This could be a candidate for a picklist, but we dont need to put too many restrictions for customer data in the client side since we are not using Salesforce as a source of truth. So, let&apos;s keep it loosely coupled.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Account Type - like Personal / Premier / Business</inlineHelpText>
+    <label>Account Type</label>
+    <length>128</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

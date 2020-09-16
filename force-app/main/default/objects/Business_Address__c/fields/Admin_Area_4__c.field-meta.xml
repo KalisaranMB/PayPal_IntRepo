@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Area_4__c</fullName>
+    <description>The neighborhood, ward, or district. Smaller than &apos;admin_area_level_3&apos; or &apos;sub_locality&apos;. Value is: 
+The postal sorting code for Guernsey and many French territories, such as French Guiana.
+The fine-grained administrative levels in China.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The neighborhood, ward, or district. Smaller than &apos;admin_area_level_3&apos; or &apos;sub_locality&apos;.</inlineHelpText>
+    <label>Admin Area 4</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

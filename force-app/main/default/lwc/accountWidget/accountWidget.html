@@ -1,0 +1,309 @@
+<template>
+<!-- TODO Add an accordian here to be able to hide the section to save space
+     TODO Can't use the accordian from template without the code because I have a single accordian and wouldn't be able to minimize it when I have only one accordian
+     TODO I'm not making each tab an accordian section to be able to minimize individually because that defeats the purpose of saving the real estate when all 4 tabs are minimized, it still takes up lots of space.
+     TODO Cannot add custom header information ot the accordian header, can just plain text to it.
+ -->
+<lightning-card>
+    <lightning-accordion allow-multiple-sections-open active-section-name="A">
+        <lightning-accordion-section name="A" label="Jennifer Lawrence, Account Number: 234567781231233312331" >
+            <lightning-tabset >
+                <lightning-tab label="Quick Glance" >
+                    <lightning-button id="LightningTest" label="LightningTestLabel">
+                        LightningTestLabel
+                    </lightning-button>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-6">
+                            <lightning-avatar
+                            variant="circle"
+                            size="large"
+                            src={profilePicture}
+                            initials="JD"
+                            fallback-icon-name="standard:person_account"
+                            alternative-text="Jennifer Lawrence"
+                            class=" pp-avatar slds-align_absolute-center ">
+                            </lightning-avatar><br/>
+                            <!-- <lightning-formatted-name
+                            class="pp-display-name slds-align_absolute-center"
+                            first-name="Jennifer"
+                            last-name="Lawrence"
+                            ></lightning-formatted-name> -->
+                        </div>
+                        <div class="slds-col slds-size_4-of-6">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="12">
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12">
+                                    <lightning-layout>
+                                        <lightning-layout-item padding="around-small" size="3">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Account Number</b></p>
+                                                <p>{acct.AccountNumber}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Emails</b></p>
+                                                <template for:each={emails} for:item="email" for:index="index">
+                                                    <p key={email.Id}>{email.EmailAddress__c} - {email.ConfirmationStatus__c}</p>
+                                                </template>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="3">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Customer Segment</b></p>
+                                                <p>{acct.CustomerSegment__c}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="2">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Customer Revenue</b></p>
+                                                <p>$3.5M Per year</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12">
+                                    <lightning-layout >
+                                        <lightning-layout-item padding="around-small" size="3">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 4"><b>Restriction</b></p>
+                                                <template for:each={limitations} for:item="limitation" for:index="index">
+                                                    <p key={limitation.Id}>{limitation.Category__c}</p>
+                                                </template>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Account Flags</b></p>
+                                                <template for:each={accountManagers} for:item="flag" for:index="index">
+                                                    <p key={flag.Id}>{flag.Name}</p>
+                                                </template>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="2">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 2"><b>Customer Journey</b></p>
+                                                <a>view</a>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="3">
+                                            <div class="header-column">
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <div class="slds-col slds-size_1-of-6"></div>
+                    </div>
+                </lightning-tab>
+                <lightning-tab label="Customer Profile" title="2nd tab extended title">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-6">
+                            <lightning-avatar
+                            variant="circle"
+                            size="large"
+                            src={profilePicture}
+                            initials="JL"
+                            fallback-icon-name="standard:person_account"
+                            alternative-text="Jennifer Lawrence"
+                            class=" pp-avatar slds-align_absolute-center">
+                            </lightning-avatar><br/>
+                            <!-- <lightning-formatted-name
+                            class="pp-display-name  slds-align_absolute-center"
+                            first-name="Jennifer"
+                            last-name="Lawrence"
+                            ></lightning-formatted-name> -->
+                        </div>
+                        <div class="slds-col slds-size_4-of-6">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="12">
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12">
+                                    <lightning-layout>
+                                        <lightning-layout-item padding="around-small" size="1">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Age</b></p>
+                                                <p>{acct.Age__c}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="1">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Location</b></p>
+                                                <p>{acct.Location__c}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Wallet</b></p>
+                                                <template for:each={wallets} for:item="wallet" for:index="index">
+                                                    <div class="slds-col" key={wallet.Name}>
+                                                        <p>{wallet.Name} {wallet.Subtype__c} {wallet.Type__c} ending - {wallet.Last4Digits__c}</p>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="2">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Recent Marketing Offers</b></p>
+                                                <template for:each={marketingOffers} for:item="offer" for:index="index">
+                                                    <div class="slds-col" key={offer.Name}>
+                                                        <p>{offer.Name}</p>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="2">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Purchasing Habits</b></p>
+                                                <template for:each={purchasingHabits} for:item="habit" for:index="index">
+                                                    <div class="slds-col" key={habit.Name}>
+                                                        <p>image {habit.PurchasePercentage__c}% {habit.Name}</p>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="2">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b></b></p>
+                                                <p></p>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12">
+                                    <lightning-layout >
+                                        <lightning-layout-item padding="around-small" size="1">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 4"><b>Goals</b></p>
+                                                <p>None</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="1">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Sentiment</b></p>
+                                                <p>Positive</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="2">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 2"><b>Transaction Frequency</b></p>
+                                                <a>{acct.AvgTxnNumber__c} per {acct.TxnFrequencyDuration__c} (Avg : {acct.AvgTxnNumber__c})</a>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="2">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 3"><b>Charity/Causes</b></p>
+                                                <template for:each={charities} for:item="charity" for:index="index">
+                                                    <p key={charity.Name}>{charity.Name} - {charity.PaymentCycle__c} {charity.Amount__c}</p>
+                                                </template>
+                                            </div>
+                                        </lightning-layout-item>
+                                            <lightning-layout-item padding="around-small" size="2">
+                                                <div class="header-column">
+                                                    <p class="field-title" title="Field 2"><b>Customer Journey</b></p>
+                                                    <a>view</a>
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item padding="around-small" size="2">
+                                                <div class="header-column">
+                                                </div>
+                                            </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <div class="slds-col slds-size_1-of-6">
+                        </div>
+                    </div>
+                </lightning-tab>
+                <lightning-tab label="PayPal Relationship">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-6">
+                            <lightning-avatar
+                            variant="circle"
+                            size="large"
+                            src={profilePicture}
+                            initials="JD"
+                            fallback-icon-name="standard:person_account"
+                            alternative-text="Jennifer Lawrence"
+                            class=" pp-avatar slds-align_absolute-center">
+                            </lightning-avatar><br/>
+                            <!-- <lightning-formatted-name
+                            class="pp-display-name  slds-align_absolute-center"
+                            first-name="Jennifer"
+                            last-name="Lawrence"
+                            ></lightning-formatted-name> -->
+                        </div>
+                        <div class="slds-col slds-size_4-of-6">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="12">
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12">
+                                    <lightning-layout>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Customer Segment</b></p>
+                                                <p>{acct.CustomerSegment__c}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Engagement Level</b></p>
+                                                <p>{acct.EngagementLevel__c }</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Chrun Indicator</b></p>
+                                                <p>{acct.ChurnIndicator__c}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12">
+                                    <lightning-layout >
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 4"><b>TPV Enabled</b></p>
+                                                <p>{acct.TpvAmountCurrencyCode__c}{acct.TpvAmount__c}per{acct.TpvFrequencyDuration__c}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 1"><b>Behavior</b></p>
+                                                <p>{acct.Behavior__c}</p>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item padding="around-small" size="4">
+                                            <div class="header-column">
+                                                <p class="field-title" title="Field 2"><b>Customer Journey</b></p>
+                                                <a>view</a>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout horizontal-align="spread">
+                                <!-- <lightning-layout-item padding="around-small">
+                                    <div class="header-column">
+                                        <p class="field-title" title="Field 3">Place Holder</p>
+                                        <p>234567781231233312331</p>
+                                    </div>
+                                </lightning-layout-item> -->
+                            </lightning-layout>
+        
+                        </div>
+                        <div class="slds-col slds-size_1-of-6"></div>
+        
+                    </div>
+                </lightning-tab>
+                <lightning-tab label="Customer History" title="2nd tab extended title" >
+                </lightning-tab>
+            </lightning-tabset>
+        </lightning-accordion-section>
+    </lightning-accordion>
+
+</lightning-card>
+</template>

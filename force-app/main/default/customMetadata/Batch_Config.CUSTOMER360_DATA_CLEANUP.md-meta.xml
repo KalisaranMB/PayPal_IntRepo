@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CUSTOMER360_DATA_CLEANUP</label>
+    <protected>false</protected>
+    <values>
+        <field>Data_Freshness__c</field>
+        <value xsi:type="xsd:double">1440.0</value>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">Customer360 data cleanup batch is responsible for cleaning up the prefetched data. The data brought into Salesforce will be considered as Stale after the configured period of time, typically in hours. When the data is old, there is no use for that data in future since the system of record for that data is different domains within PayPal.
+
+Processing Time range - How much time window the batch has to pick to load records for the cleanup. At this point of time, batch will run daily and hence we consider 24 hours as the time window to process.
+
+Data Freshness - How old the record has to be to consider that for the cleanup. At this point of time, we consider records to cleanup only if it is older than than 24 hours.</value>
+    </values>
+    <values>
+        <field>Notification_Address__c</field>
+        <value xsi:type="xsd:string">ec-nextgen-salesforce-notifications@paypal.com</value>
+    </values>
+    <values>
+        <field>Processing_Time_Range__c</field>
+        <value xsi:type="xsd:double">1440.0</value>
+    </values>
+    <values>
+        <field>Scope__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+</CustomMetadata>

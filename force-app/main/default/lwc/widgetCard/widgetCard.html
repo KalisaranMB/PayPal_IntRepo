@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-grid custom-size slds-m-left_small slds-m-bottom_small">
+        <div class="slds-col slds-size_3-of-12 slds-align_absolute-center" style="
+        border-right: 1px solid;
+        border-right-color: #c3c3c3;" onclick={widgetClick}>
+            <lightning-icon icon-name={widget.Icon__c} alternative-text={widget.Name} size="small" ></lightning-icon>
+        </div>
+        <div class="slds-col slds-size_9-of-12 slds-align_absolute-center lgc-bg" >
+            <div class="slds-p-left_xx-small slds-p-right_xx-small" onclick={widgetClick}>
+                {widget.Name}
+            </div>
+            <div class="slds-p-left_xx-small slds-p-right_x-small">
+                <template if:true={widget.Pins__r}>
+                    <lightning-button-icon icon-name="utility:pinned" value={widget.Id} variant="border-filled" onclick={handleUnpinClick} alternative-text="Pin" size="x-small" slot="actions"></lightning-button-icon>
+                </template>
+                <template if:false={widget.Pins__r}>
+                    <lightning-button-icon icon-name="utility:pin" value={widget.Id} variant="border-filled" onclick={handlePinClick} alternative-text="Unpin" size="x-small" slot="actions"></lightning-button-icon>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

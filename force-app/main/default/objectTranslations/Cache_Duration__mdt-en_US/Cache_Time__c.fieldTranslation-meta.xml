@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Cache Time in Minutes - Duration for which the data is considered valid --></help>
+    <label><!-- Cache Time --></label>
+    <name>Cache_Time__c</name>
+</CustomFieldTranslation>

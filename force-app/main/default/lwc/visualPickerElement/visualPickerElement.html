@@ -1,0 +1,23 @@
+<template>        
+    <div class="slds-visual-picker slds-visual-picker_vertical">
+        <input type="radio" id={pickerId} value={pickerValue} name={pickerName} onchange={onClick}/>
+        <label for={pickerId}>
+            <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center" style="border: 2px solid #1589EE; background: #FFFFFF; box-sizing: border-box; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); border-radius: 4px;">
+                <span>
+                    <span class="slds-text-title slds-text-align_center"
+                        style="font-family:SalesforceSans;font-size:14px;line-height:20px;color:#000000;text-align: center;"><b>{mainText}</b></span>
+                        <span class="slds-text-title slds-text-align_center"
+                                style="font-family:SalesforceSans;font-size:14px;line-height:20px;color:#000000;text-align: center;">({subText}) 
+                                <template if:true={hasRendered}>
+                                <lightning-icon class="colorBlue" variant="warning" icon-name="utility:down" size="x-small"></lightning-icon>
+                            </template>
+                            </span>
+                </span>
+            </span>
+            <span class="slds-icon_container slds-visual-picker__text-check">
+                <lightning-icon icon-name="utility:check" size="x-small" variant="inverse"></lightning-icon>
+            </span>
+        </label>
+    </div>
+    <br>
+</template>

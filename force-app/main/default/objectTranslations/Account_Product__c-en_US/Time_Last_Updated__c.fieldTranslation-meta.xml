@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Date the product was de-activated/removed (if any) --></help>
+    <label><!-- Time Last Updated --></label>
+    <name>Time_Last_Updated__c</name>
+</CustomFieldTranslation>

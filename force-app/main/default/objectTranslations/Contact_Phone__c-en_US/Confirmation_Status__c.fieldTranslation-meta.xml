@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Confirmation status of the phone number in the profile --></help>
+    <label><!-- Confirmation Status --></label>
+    <name>Confirmation_Status__c</name>
+</CustomFieldTranslation>

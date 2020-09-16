@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correlating_GSID__c</fullName>
+    <description>Correlating Session Id - Global session id for the Customer&apos;s session or the other channels like IVR. This GSID will be passed to Teammate Tool from other Channels while handing over the contact.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Correlating Session Id - Global session id for the Customer&apos;s session or the other channels like IVR. This GSID will be passed to Teammate Tool from other Channels while handing over the contact.</inlineHelpText>
+    <label>Correlating GSID</label>
+    <length>256</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

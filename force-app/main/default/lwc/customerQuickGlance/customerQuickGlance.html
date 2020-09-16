@@ -1,0 +1,359 @@
+<template>
+    <div class="cont">
+            <lightning-layout multiple-rows="true" >
+                <lightning-layout-item size="11">
+
+                </lightning-layout-item>
+                <lightning-layout-item size="1" class="refresh">
+                    <div>
+                        <template if:true={loading}>
+                            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                        </template>
+                        <template if:false={loading}>
+                            <lightning-button-icon icon-name="action:refresh"  size="medium" alternative-text="Refresh" onclick={handleRefreshData}></lightning-button-icon>
+                        </template>
+                        </div>
+                </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch" >
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.CustomerName}</p>
+                            <p class="field-value">{userInfo.Full_Name__c}</p>
+                        </div>       
+                        <hr class=" solid divider-half" >               
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column" >
+                            <p class="field-title" title="Customer Name">{label.PrimaryAddress}</p>
+                            <p class="field-value"><lightning-formatted-address
+                                street={primaryAddress.Address_Line_1__c}
+                                city={primaryAddress.Admin_Area_3__c}
+                                country={primaryAddress.Country__c}
+                                province={primaryAddress.Admin_Area_2__c}
+                                postal-code={primaryAddress.Postal_Code__c}
+                                disabled
+                            ></lightning-formatted-address></p>
+                        </div>
+                        <hr class=" solid divider-half">
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch" >
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.AccountNumber}</p>
+                            <p class="field-value">{accountInfo.AccountNumber}</p>
+                        </div>       
+                        <hr class=" solid divider-half" >               
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.AccountType}</p>
+                            <p class="field-value">{accountInfo.Account_Type__c}({accountInfo.Account_Subtype__c})</p>
+                        </div>  
+                        <hr class=" solid divider-half">
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch" >
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.AccountStatus}</p>
+                            <p class="field-value">???{}</p>
+                        </div>       
+                        <hr class=" solid divider-half" >               
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.AccountCountry}</p>
+                            <p class="field-value">{accountInfo.Country_Name__c}</p>
+                        </div>
+                        <hr class=" solid divider-half">
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch" >
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.ComplianceStatus}</p>
+                            <p class="field-value">{accountInfo.CIP_Status__c}</p>
+                        </div>       
+                        <hr class=" solid divider-half" >               
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.AccountCreated}</p>
+                            <!-- TODO Change the format to match any country and also fixed information  -->
+                            <lightning-formatted-date-time class="field-value" value={accountInfo.Account_Created_Time__c} year="numeric" month="numeric" day="numeric" ></lightning-formatted-date-time></p>
+                        </div>
+                        <hr class=" solid divider-half">
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch" >
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.CustomerSegment}</p>
+                            <p class="field-value">{accountInfo.Customer_Segment__c}</p>
+                        </div>       
+                        <hr class=" solid divider-half" >               
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.AccountFlags}</p>
+                            <template for:each={accountFlags} for:item="flag">
+                                <p key={flag.Id} class="field-value">{flag.Name}</p>
+                            </template>
+                            
+                        </div>
+                        <hr class=" solid divider-half">
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch">
+                    <lightning-layout-item size="12" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.Restrictions}</p>
+                            <template for:each={limitations} for:item="limitation">
+                                <p class="field-value" key={limitation.Id}>{limitation.Name}</p>
+                            </template>
+                        </div>       
+                        <hr class=" solid divider-half" >               
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch">
+                    <lightning-layout-item size="12" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            <p class="field-title" title="Customer Name">{label.Emails}</p>
+                            <template for:each={emails} for:item="email" for:index="index">
+                                <p key={email.Id}>{email.Email_Address__c}</p>
+                                <lightning-layout key={email.Id} size="12">
+                                    <template if:true={email.Is_Trusted__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={email.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Trusted}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={email.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={email.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Confirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={email.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={email.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    {label.Unconfirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={email.Is_Primary__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={email.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Primary}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={email.Is_Active__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={email.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    {label.Inactive}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                                <hr key={email.Id} class="solid divider-full" >
+                            </template>
+                        </div>                
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <lightning-layout vertical-align="stretch" >
+                    <lightning-layout-item size="12" class="slds-is-relative slds-p-around_xx-small">
+                        <div class="header-column slds-text-align_left " >
+                            
+                            <template for:each={homePhones} for:item="phone" for:index="index">
+                                <p key={phone.Id} class="field-title" title="Customer Name">{label.Phone} ({label.Home})</p>
+                                <p key={phone.Id}><lightning-formatted-phone value={phone.Phone_Number__c}></lightning-formatted-phone></p>
+                                <lightning-layout key={phone.Id} size="12">
+                                    <template if:true={phone.Is_Trusted__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Trusted}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Confirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    {label.Unconfirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={phone.Is_Primary__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Primary}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                        <div key={phone.Id} class="header-column" >
+                                            <span class="slds-badge slds-badge_inverse">
+                                                {label.Inactive}
+                                            </span>
+                                        </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                                <hr key={phone.Id} class="solid divider-full" >
+                            </template>
+                            <template for:each={workPhones} for:item="phone" for:index="index">
+                                <p key={phone.Id} class="field-title" title="Customer Name">{label.Phone} ({label.Work})</p>
+                                <p key={phone.Id}><lightning-formatted-phone value={phone.Phone_Number__c}></lightning-formatted-phone></p>
+                                <lightning-layout key={phone.Id} size="12">
+                                    <template if:true={phone.Is_Trusted__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Trusted}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Confirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    {label.Unconfirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={phone.Is_Primary__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Primary}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                        <div key={phone.Id} class="header-column" >
+                                            <span class="slds-badge slds-badge_inverse">
+                                                {label.Inactive}
+                                            </span>
+                                        </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                                <hr key={phone.Id} class="solid divider-full" >
+                            </template>
+                            <template for:each={mobilePhones} for:item="phone" for:index="index">
+                                <p key={phone.Id} class="field-title" title="Customer Name">{label.Phone} ({label.Mobile})</p>
+                                <p key={phone.Id}><lightning-formatted-phone value={phone.Phone_Number__c}></lightning-formatted-phone></p>
+                                <lightning-layout key={phone.Id} size="12">
+                                    <template if:true={phone.Is_Trusted__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Trusted}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Confirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    {label.Unconfirmed}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:true={phone.Is_Primary__c}>
+                                        <lightning-layout-item size="3">
+                                            <div key={phone.Id} class="header-column" >
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    {label.Primary}
+                                                </span>
+                                            </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={phone.Is_Confirmed__c}>
+                                        <lightning-layout-item size="3">
+                                        <div key={phone.Id} class="header-column" >
+                                            <span class="slds-badge slds-badge_inverse">
+                                                {label.Inactive}
+                                            </span>
+                                        </div>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                                <hr key={phone.Id} class="solid divider-full" >
+                            </template>
+                        </div>             
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+
+        </lightning-layout>
+    </div>
+</template>

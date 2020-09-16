@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-gutters slds-p-horizontal_small">
+            <div class="slds-col">
+                <lightning-input name="keyword-search" label="Filter by Keyword" placeholder="Search this list..." type="search" onchange={handleFilterChange}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <lightning-combobox name="date-filter-type" label="Filter by Date Range" value={currentDateFilterType} options={dateFilters} onchange={handleFilterChange}></lightning-combobox>
+            </div>
+            <template if:true={showStartDateInput}>
+                <div class="slds-col  slds-size_1-of-6">
+                    <lightning-input type="date" name="start-date" value={startDate} label="Start Date" onchange={handleFilterChange}></lightning-input>
+                </div>
+            </template>
+            <template if:true={showEndDateInput}>
+                <div class="slds-col slds-size_1-of-6">
+                    <lightning-input type="date" name="end-date" value={endDate} label="End Date" onchange={handleFilterChange}></lightning-input>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

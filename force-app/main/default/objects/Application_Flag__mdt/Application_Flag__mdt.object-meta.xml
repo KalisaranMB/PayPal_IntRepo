@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The application level flags that can be used to switch on/off certain behaviors or capabilities in the application like a WOWO. This can be used to turn on/off new sub flows, features, service calls or anything else that we can think of from the application side. If we want to control certain system / technical behaviors like turning off prefetch/async, query and so on, please refer the System_Flag custom metadata.</description>
+    <label>Application Flag</label>
+    <pluralLabel>Application Flags</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

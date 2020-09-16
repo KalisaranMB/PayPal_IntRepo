@@ -1,0 +1,91 @@
+<template>
+  <article class="slds-card cardContainer width50">
+    <div class="slds-card__header slds-grid cardHeader">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__figure">
+          <lightning-icon icon-name="standard:account" alternative-text="chat" title="chat"></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+              <span>PayPal Chatbot</span>
+            </a>
+          </h2>
+        </div>
+        <!--<div class="slds-no-flex">
+          <button class="slds-button slds-button_neutral">New</button>
+        </div>-->
+      </header>
+    </div>
+    <div class="slds-card__body slds-card__body_inner">
+      <div class="slds-chat-bookend chatbookendOverride">
+        <lightning-icon icon-name="utility:chat" alternative-text="chat" title="chat" size="xx-small"></lightning-icon>
+        
+        <p class="paddingleft5">Chat started by
+          <b> Taylor Watson-Rice</b> • 4:59 PM</p>
+      </div>
+    </div>
+    <footer class="slds-card__footer">
+      
+      <template for:each={messages} for:item="message">
+        <section key={message} role="log" class="slds-chat" if:true={message.isAgent}>
+          <ul class="slds-chat-list">
+            <li class="slds-chat-listitem slds-chat-listitem_inbound">
+              <div class="slds-chat-message">
+                <span aria-hidden="true" class="slds-avatar slds-avatar_circle slds-chat-avatar">
+                  <lightning-icon icon-name="standard:bot" alternative-text="chat" title="chat" size="medium"></lightning-icon>
+                </span>
+                <div class="slds-chat-message__body">
+                  <div class="slds-chat-message__text slds-chat-message__text_inbound ">
+                    <span> {message.notes}</span>
+                  </div>
+                  <div class="slds-chat-message__meta" aria-label="messenger_name">{message.name} at {message.timeStamp}
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section key={message} role="log" class="slds-chat" if:false={message.isAgent}>
+          <ul class="slds-chat-list">
+            <li class="slds-chat-listitem slds-chat-listitem_outbound">
+              <div class="slds-chat-message">
+                <div class="slds-chat-message__body">
+                  <div class="slds-chat-message__text slds-chat-message__text_outbound">
+                    <span> {message.notes}</span>
+                  </div>
+                  <div class="slds-chat-message__meta" aria-label="agent_name">{message.name} at {message.timeStamp}
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </template>
+
+<div class="slds-visual-picker slds-visual-picker_medium">
+    <input type="radio" id="visual-picker-95" value="visual-picker-95" name="options" />
+    <label for="visual-picker-95">
+          <span class="slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center">
+            <span>
+              <span class="slds-text-heading_large">$150</span>
+              <span class="slds-text-title">USD/user/month *</span>
+            </span>
+          </span>
+          <span class="slds-visual-picker__body">
+            <span class="slds-text-heading_small">Lightning Enterprise</span>
+            <span class="slds-text-title">Everything you need to take support to the next level</span>
+          </span>
+          <span class="slds-icon_container slds-visual-picker__text-check">
+            <svg class="slds-icon slds-icon-text-check slds-icon_x-small" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+            </svg>
+          </span>
+        </label>
+</div>
+</footer>
+</article>
+
+
+</template>

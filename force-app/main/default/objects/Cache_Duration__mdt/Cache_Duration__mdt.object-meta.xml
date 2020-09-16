@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>When we bring the data via APIs into Salesforce, irrespective of whether it is from PayPal or from other sources, we need to decide how log we can keep it without worrying about its freshness. Obviously the best way is to get the data from system of record always so that its fresh. But that will have performance implications and hence we need to strike a balance. This configuration will help with that.</description>
+    <label>Cache Duration</label>
+    <pluralLabel>Cache Duration</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

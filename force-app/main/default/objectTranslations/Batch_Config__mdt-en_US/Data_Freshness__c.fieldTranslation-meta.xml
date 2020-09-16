@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- How old the data needs to be to consider for processing. This field can be interpreted in multiple ways depending on what the batch does. For e.g., the cleanup batch will only consider the records older than this time for cleanup. --></help>
+    <label><!-- Data Freshness --></label>
+    <name>Data_Freshness__c</name>
+</CustomFieldTranslation>

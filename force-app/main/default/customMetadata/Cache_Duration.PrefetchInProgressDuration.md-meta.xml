@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>PrefetchInProgressDuration</label>
+    <protected>false</protected>
+    <values>
+        <field>Cache_Time__c</field>
+        <value xsi:type="xsd:double">15.0</value>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">The time for which the Pre-fetch can be In-Progress before we initiate the Pre-fetch again. There are several possibilities for a pre-fetch to fail, so this setting will control how long we can wait for the work to complete.</value>
+    </values>
+</CustomMetadata>

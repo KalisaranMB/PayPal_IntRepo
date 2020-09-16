@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Name__c</fullName>
+    <description>Full Name of the customer. This value comes from PayPal domain and we need a separate field since Name in Contact object is not writable.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Full Name of the customer.</inlineHelpText>
+    <label>Full Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Case_Id__c</fullName>
+    <description>Case id of the parent in case these two cases are linked. This is applicable in scenarios like followups.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Case id of the parent in case these two cases are linked</inlineHelpText>
+    <label>Parent Case Id</label>
+    <length>64</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

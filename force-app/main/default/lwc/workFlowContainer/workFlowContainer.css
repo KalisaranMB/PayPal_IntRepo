@@ -1,0 +1,9 @@
+:host {
+    min-width:430px;
+    max-width:620px;
+}
+
+.body{
+    height: 500px;
+    text-align: center;
+}

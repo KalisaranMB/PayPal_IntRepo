@@ -1,0 +1,74 @@
+<template>
+    <div>
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                <lightning-icon slot="media" icon-name="custom:custom41"></lightning-icon>
+                            </span>
+                            <span class="slds-page-header__title component-title slds-text-heading_small slds-align_absolute-center" title="Payments">{label.Payments}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <lightning-accordion allow-multiple-sections-open
+                                onsectiontoggle={handleSectionToggle}   
+                                active-section-name={activeSections}>
+            <lightning-accordion-section name="PayPalDebitCards" label={label.PayPalDebitCards} >            
+                <template if:false={hasPaypalDebitCards} >
+                    {label.NotAvailable}
+                </template>                  
+                <template for:each={paypalDebitCards} for:item="instrument" for:index="index">
+                    <lightning-tile   key={instrument.Wallet_Id__c} label={instrument.info} type="media" href="#">
+                        <lightning-icon slot="media" icon-name={instrument.icon}></lightning-icon>
+                        <template if:true={instrument.hasExpiry}>
+                            <p class="slds-truncate" title="expiration">{label.ExpirationDate}: <lightning-formatted-date-time class="field-value" value={instrument.Expiry_Date__c} year="numeric" month="short" ></lightning-formatted-date-time></p>
+                        </template>
+                    </lightning-tile>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="PayPalCredit" label={label.PayPalCredit}>
+                <template if:false={hasPaypalCredit} >
+                    {label.NotAvailable}
+                </template>
+                <template for:each={paypalCredit} for:item="instrument" for:index="index">
+                    <lightning-tile  key={instrument.Wallet_Id__c} label={instrument.info} type="media" href="#">
+                        <lightning-icon slot="media" icon-name={instrument.icon}></lightning-icon>
+                        <template if:true={instrument.hasExpiry}>
+                            <p class="slds-truncate" title="expiration">{label.ExpirationDate}: <lightning-formatted-date-time class="field-value" value={instrument.Expiry_Date__c} year="numeric" month="short" ></lightning-formatted-date-time></p>
+                        </template>
+                    </lightning-tile>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="BanksAndCards" label={label.BanksAndCards}>
+                <template if:false={hasBanksAndCards} >
+                    {label.NotAvailable}
+                </template>
+                <template for:each={banksAndCards} for:item="instrument" for:index="index">
+                    <lightning-tile  key={instrument.Wallet_Id__c} label={instrument.info} type="media" href="#">
+                        <lightning-icon slot="media" icon-name={instrument.icon}></lightning-icon>
+                        <template if:true={instrument.hasExpiry}>
+                        <p class="slds-truncate" title="expiration">{label.ExpirationDate}: <lightning-formatted-date-time class="field-value" value={instrument.Expiry_Date__c} year="numeric" month="numeric" ></lightning-formatted-date-time></p>
+                        </template>
+                    </lightning-tile>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="Rewards" label={label.Rewards}>
+                <template if:false={hasRewards} >
+                    {label.NotAvailable}
+                </template>
+                <template for:each={rewards} for:item="instrument" for:index="index" >
+                    <lightning-tile  key={instrument.Wallet_Id__c} label={instrument.info} type="media" href="#">
+                        <lightning-icon slot="media" icon-name={instrument.icon}></lightning-icon>
+                        <template if:true={instrument.hasExpiry}>
+                            <p class="slds-truncate" title="expiration">{label.ExpirationDate}: <lightning-formatted-date-time class="field-value" value={instrument.Expiry_Date__c} year="numeric" month="numeric" ></lightning-formatted-date-time></p>
+                        </template>
+                    </lightning-tile>
+                </template>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </div>
+</template>

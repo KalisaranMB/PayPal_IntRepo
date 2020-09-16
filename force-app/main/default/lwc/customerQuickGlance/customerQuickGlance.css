@@ -1,0 +1,65 @@
+.pp-avatar {
+    height: 4rem;
+    width: 4rem;
+    align-self: right;
+}
+.tab-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.tab-container li{
+  align-self: right;
+}
+.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+.header-column {
+margin-top: .25rem;
+}
+/* .{
+    font-size: .75rem;
+    line-height: 1.25;
+    color: #54698d;
+    margin-bottom: .25rem;
+} */
+.custom-box {
+    padding: 1rem 0;
+}
+.field-title {
+    margin-bottom: .25rem;
+    font-style: normal;
+    font-weight: 600;
+}
+.field-value {
+    line-height: 1.1rem;
+    margin-bottom: 4px;
+    font-style: normal;
+    font-weight: normal;
+}
+.solid {
+    
+    bottom: 0px;
+    border: 1px solid #E3E1E1;
+    height: 0;
+    /* padding: 0; */
+    margin: 5px 0;
+}
+
+.divider-full {
+    position: relative;
+    width: 90%
+}
+.divider-half {
+    position: absolute;
+    width: 80%
+}
+.cont {
+position:relative
+}
+.refresh {
+    margin-bottom: -25px;
+    z-index: 5;
+}

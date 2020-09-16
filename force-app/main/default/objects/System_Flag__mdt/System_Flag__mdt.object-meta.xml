@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The system level flags that can be used to switch on/off certain technical behaviors in the application - like controlling prefetch, asynchronous execution and so on. If we want to control certain product/application behaviors like wiring on/off a certain capability, please refer the Application_Flag custom metadata.</description>
+    <label>System Flag</label>
+    <pluralLabel>System Flags</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

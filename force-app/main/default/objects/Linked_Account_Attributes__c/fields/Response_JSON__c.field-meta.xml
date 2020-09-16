@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Response_JSON__c</fullName>
+    <description>The JSON string that contains the linked attribute details are stored in this field. Ideally, we would like to explode the whole data into the object, but given that Salesforce is not the system of record, we don&apos;t need to complicate unless it is absolutely necessary.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The JSON string that contains the linked attribute details.</inlineHelpText>
+    <label>Response JSON</label>
+    <length>8192</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

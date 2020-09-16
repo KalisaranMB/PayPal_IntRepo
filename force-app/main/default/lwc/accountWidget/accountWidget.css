@@ -1,0 +1,42 @@
+.pp-avatar {
+    height: 7rem;
+    width: 7rem;
+    align-self: right;
+}
+.pp-display-name {
+    font-size: 1.95em;
+    color: rgb(0, 109, 204);
+}
+.tab-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.tab-container li{
+  align-self: right;
+}
+.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+.header-column {
+    padding: 0 2rem;
+}
+/* .{
+    font-size: .75rem;
+    line-height: 1.25;
+    color: #54698d;
+    margin-bottom: .25rem;
+} */
+.custom-box {
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}
+.field-title {
+    font-size: .75rem;
+    line-height: 1.25;
+    margin-bottom: .25rem;
+}

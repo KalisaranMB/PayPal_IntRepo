@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Status of the Cache. NOT_STARTED is by default when we insert a record. We will change it to IN_PROGRESS after sending the pre-fetch request and mark it as COMPLETED when we receive the prefetched data. --></help>
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>COMPLETED</masterLabel>
+        <translation><!-- COMPLETED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IN_PROGRESS</masterLabel>
+        <translation><!-- IN_PROGRESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOT_STARTED</masterLabel>
+        <translation><!-- NOT_STARTED --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

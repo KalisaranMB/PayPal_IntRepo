@@ -1,0 +1,15 @@
+<template>
+        <fieldset class="slds-form-element">
+            <legend class="slds-form-element__legend slds-form-element__label"
+                style="font-family:SalesforceSans;font-size:16px;line-height:20px;color:#000000;">{legend}
+            </legend>
+            <div class="slds-form-element__control">
+            <template for:each={options} for:item="option">
+                <c-visual-picker-element main-text={option.mainText} key={option.id} 
+                sub-text={option.subText} picker-id={option.mainText} 
+                picker-name={option.pickerGroupName} onoptionselect={handleOptionSelect}>
+                </c-visual-picker-element>
+            </template>
+        </div>
+    </fieldset>
+</template>

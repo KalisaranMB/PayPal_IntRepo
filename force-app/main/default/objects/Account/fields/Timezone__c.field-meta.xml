@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timezone__c</fullName>
+    <description>Customer&apos;s timezone. This might be required to display some data like transaction log in customer&apos;s timezone rather than teammate&apos;s.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Customer&apos;s timezone.</inlineHelpText>
+    <label>Timezone</label>
+    <length>128</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

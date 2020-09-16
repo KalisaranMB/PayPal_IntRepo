@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- A batch execution typically involves multiple transactions. This will indicate Min DML processed in a transaction. --></help>
+    <label><!-- Min DML per Transaction --></label>
+    <name>Min_DML_per_Transaction__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Id_Encrypted__c</fullName>
+    <description>Encrypted Transaction Id</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Encrypted Transaction Id</inlineHelpText>
+    <label>Transaction Id Encrypted</label>
+    <length>64</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

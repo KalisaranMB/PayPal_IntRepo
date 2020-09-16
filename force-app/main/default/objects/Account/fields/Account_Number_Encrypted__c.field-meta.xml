@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Number_Encrypted__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Encrypted Account Number which should be used in all API calls. Please note that we will not be encrypting the account number in Salesforce side, this will be internally handled by User domain in PayPal.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Encrypted Account Number which should be used in API calls.</inlineHelpText>
+    <label>Account Number Encrypted</label>
+    <length>64</length>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

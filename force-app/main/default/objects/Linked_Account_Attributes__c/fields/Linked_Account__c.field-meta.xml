@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Account__c</fullName>
+    <description>Attributes by which two accounts are linked.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Attributes by which two accounts are linked.</inlineHelpText>
+    <label>Linked Account</label>
+    <referenceTo>Linked_Account__c</referenceTo>
+    <relationshipLabel>Linked Account Attributes</relationshipLabel>
+    <relationshipName>Linked_Account_Attributes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

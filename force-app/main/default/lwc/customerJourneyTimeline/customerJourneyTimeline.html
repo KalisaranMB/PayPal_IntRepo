@@ -1,0 +1,74 @@
+<template >
+    <ul class="slds-timeline" >
+        <template for:each={interactionData} for:item="group" for:index="monthIndex">
+            <lightning-card key={group.timeElapsed} class="slds-theme_shade">
+            <div class="slds-grid slds-box slds-theme_shade">
+                <div class="slds-m-right_x-small">
+                    <lightning-icon icon-name="utility:chevrondown" size='x-small' data-month={group.month} onclick={monthToggle}></lightning-icon>
+                </div>
+                <div class="slds-m-right_xx-small">
+                   <strong>{group.month}</strong> 
+                </div>
+                <div>
+                    <strong>{group.year}</strong> 
+                </div>
+                <div class="slds-col_bump-left">
+                    <strong>{group.timeElapsed}</strong>
+                </div>
+            </div>
+            </lightning-card>
+            <div key={group.timeElapsed} data-id={group.month}>
+           <template for:each={group.interaction} for:item="res" for:index="intrationIndex">
+                <li key={res.interactionId}>
+                <div data-id={res.interactionId} class="slds-timeline__item_expandable slds-timeline__item_task test">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <button class="slds-button slds-button_icon" aria-controls="task-item-base" data-month={monthIndex} data-interaction={res.interactionId} onclick={clickHandler}>
+                              <svg class="slds-button__icon" aria-hidden="true" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.50769 0.35391L7.87692 6.6616C8.06154 6.84622 8.06154 7.15391 7.87692 7.33853L1.50769 13.6462C1.32307 13.8308 1.01538 13.8308 0.830766 13.6462L0.153842 12.9693C-0.030773 12.7847 -0.030773 12.477 0.153842 12.2924L5.16923 7.33853C5.35384 7.15391 5.35384 6.84622 5.16923 6.6616L0.184612 1.70776C-3.63495e-06 1.52314 -3.63495e-06 1.21545 0.184612 1.03083L0.861535 0.35391C1.04615 0.200064 1.32307 0.200064 1.50769 0.35391Z" fill="#706E6B"></path>
+                                </svg>
+                            </button>
+                            <div class="slds-icon_container slds-icon-standard-task slds-timeline__icon" title="task">
+                              <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                <use xlink:href={res.iconUrl}></use>
+                              </svg>
+                            </div>
+                          </div>
+                    <div class="slds-media__body">
+                        <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                    
+                            <h3 class="slds-truncate" title="Review proposals for EBC deck with larger team and have marketing review this">
+                            <a href="javascript:void(0);">
+                                <strong>{res.channeltype}</strong>
+                            </a>
+                            </h3>
+                            <div class="slds-no-flex">
+                            <span class="slds-icon_container slds-icon-utility-rotate" title="Recurring Task">
+                                <svg class="slds-icon slds-icon_xx-small slds-icon-text-default slds-m-left_x-small" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#rotate"></use>
+                                </svg>
+                                <span class="slds-assistive-text">Recurring Task</span>
+                            </span>
+                            </div>
+                        </div>
+                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                            <p class="slds-timeline__date">{res.timeStamp}</p>
+                        </div>
+                        </div>
+                        <p class="slds-m-horizontal_xx-small">
+                            <a href="javascript:void(0);">You</a> created a task with
+                            <a href="javascript:void(0);"> Charlie Gomez</a>
+                        </p>
+                        <article class="slds-timeline__item_details slds-m-top_x-small slds-m-horizontal_xx-small" aria-hidden="false">
+                            <c-customer-journey-summary res={group.interaction} channel-name={res.channeltype} interaction-id={res.interactionId}></c-customer-journey-summary>
+                        </article>
+                    </div>
+                    </div>
+                </div>
+                </li>
+            </template>
+        </div> 
+        </template>
+    </ul>  
+</template>

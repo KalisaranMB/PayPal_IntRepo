@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Unique Identifier for the activity log --></help>
+    <label><!-- Activity Log Id --></label>
+    <name>Activity_Log_Id__c</name>
+</CustomFieldTranslation>

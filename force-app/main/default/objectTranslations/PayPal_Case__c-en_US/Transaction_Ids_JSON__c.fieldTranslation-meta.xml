@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- A case can be associated with one or more transaction ids depending on the type. This field will store the array of transaction ids in the JSON format which can be deserialized into array back when needed. --></help>
+    <label><!-- Transaction Ids JSON --></label>
+    <name>Transaction_Ids_JSON__c</name>
+</CustomFieldTranslation>

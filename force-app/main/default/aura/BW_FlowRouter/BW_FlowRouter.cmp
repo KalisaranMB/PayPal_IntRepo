@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="FlowRouterController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="currentFlowName" type="String" />
+    <lightning:flow aura:id="flowData" onstatuschange="{!c.handleStatusChange}"/>
+</aura:component>

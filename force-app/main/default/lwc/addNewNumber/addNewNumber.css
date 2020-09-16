@@ -1,0 +1,48 @@
+.add-number-header{
+    box-shadow: 0px 1px 0px #DDDBDA;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 1px;
+    border-bottom-color: #DDDBDA;
+}
+
+.add-number-header-label{
+    color: #080707;
+}
+
+.add-number-panel{
+    background: #66C2A7;
+    border-radius: 5px;
+}
+.add-number-panel-icon{
+    color: #FFFFFF;
+}
+.add-number-verbatim{
+    color: #FFFFFF;
+    font-size: 12px;
+    border-left-color: #FFFFFF;
+}
+
+.add-number-ack-section{
+    font-size: 12px;
+}
+
+.add-number-hr{
+    color: #DDDBDA;
+}
+
+.add-number-text{
+    color: #3E3E3C;
+    align-self: center;
+    margin: 8px 0px;
+    font-size: 12px;
+}
+
+.add-number-input{
+    border: 1px solid #DDDBDA;;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.add-number-footer{
+    border-top-width: thin;
+}

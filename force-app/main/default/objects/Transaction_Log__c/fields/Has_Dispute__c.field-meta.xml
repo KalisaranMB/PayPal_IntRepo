@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Dispute__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is this transaction ever disputed?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is this transaction ever disputed?</inlineHelpText>
+    <label>Has Dispute</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

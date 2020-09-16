@@ -1,0 +1,13 @@
+<template>
+  <template for:each={json.Questions} for:item="ques">
+      <p key={ques.question}>{ques.question}</p>
+      <lightning-radio-group name={ques.id}
+                        key={ques.id}
+                        options={ques.options}
+                        onchange={handleChange}
+                        data-id = {ques.id}
+                        type="radio"
+                        required></lightning-radio-group>
+                  
+  </template>
+</template>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Running Balance Amount --></help>
+    <label><!-- Running Balance Amount --></label>
+    <name>Running_Balance_Amount__c</name>
+</CustomFieldTranslation>

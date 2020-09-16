@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trust_Status__c</fullName>
+    <description>Trust status of the Phone</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Trust status of the Phone</inlineHelpText>
+    <label>Trust Status</label>
+    <length>128</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

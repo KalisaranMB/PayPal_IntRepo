@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actor__c</fullName>
+    <description>Actor name who handled the intent. This is required since an interaction can be handled by multiple teammates in case of transfer or asynchronous chats.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Actor name</inlineHelpText>
+    <label>Actor</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

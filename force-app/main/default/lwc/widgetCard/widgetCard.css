@@ -1,0 +1,15 @@
+.lgc-bg {
+    background-color:#ffffff;
+}
+.icon-bg {
+    background-color: #fff;
+}
+.custom-size{
+    width:10rem;
+    height: 3rem;
+    border-radius: 0.2rem;
+    box-shadow: .01rem 0.2rem 0.1rem #efe9e9;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cac8c8;
+}

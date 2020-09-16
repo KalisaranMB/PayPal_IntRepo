@@ -1,0 +1,31 @@
+<template>
+    <lightning-card>
+    <lightning-tabset >
+        <lightning-tab label="Widgets" >
+            <div onchange={handleChange}>
+                <lightning-input
+                    name="enter-search"
+                    type="search"
+                    class="slds-m-left_medium slds-m-right_medium"
+                ></lightning-input>
+            </div>
+            <div class="slds-grid slds-wrap container slds-m-around_medium">
+                <template for:each={localWidgets} for:item="widget" for:index="index">
+                    <div class="slds-col" key={widget.Name}>
+                        <c-widget-card
+                            key={widget.Name}
+                            widget={widget}
+                            ontogglepin={handlePinWidget}
+                            onwidgetclick={handleWidgetClick}
+                            index={index}
+                            grid={getGridStyle}
+                            intent={intent}
+                        >
+                        </c-widget-card>
+                    </div>
+                </template>
+            </div>
+        </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Security_Context__c</fullName>
+    <description>Security context generated for the session - between the teammate (actor) and the account (subject) for the current case.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Security context generated for the session</inlineHelpText>
+    <label>Security Context</label>
+    <length>10000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

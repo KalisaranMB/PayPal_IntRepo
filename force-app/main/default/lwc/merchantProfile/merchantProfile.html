@@ -1,0 +1,520 @@
+<template>
+    <div>
+        <lightning-layout-item size="12">
+            <lightning-layout vertical-align="stretch" size="12">
+                <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                    <div class="header-column slds-text-align_left">
+                        <p class="field-title slds-p-bottom_xx-small" title="Secondary Users">
+                            <strong>
+                                Secondary Users
+                                <!--{label.SecondaryUsers}-->
+                            </strong>
+                        </p>
+                        <template if:true={hasSecondaryUsers}>
+                            <p class="field-value slds-p-bottom_xx-small">
+                                <a href="javascript:void()" onclick={openSUModal}>Secondary Users</a>
+                            </p>
+                        </template>
+                        <template if:false={hasSecondaryUsers}>
+                            <p class="field-value slds-p-bottom_xx-small">{label.NotAvailable}</p>
+                        </template>
+                    </div>
+                    <div class="slds-border_bottom"></div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <lightning-layout vertical-align="stretch" size="12">
+                <lightning-layout-item size="10" class="slds-is-relative slds-p-around_xx-small">
+                    <div class="header-column slds-text-align_left">
+                        <p class="slds-p-bottom_xx-small" title="Alternate Email">
+                            <strong>
+                                Alternate Email
+                                <!--{label.PrimaryEmail}-->
+                            </strong>
+                        </p>
+                        <template for:each={alternateEmails} for:item="alternateEmail">
+                            <template if:false={alternateEmail.Is_Primary__c}>
+                                <div class="slds-border_bottom slds-text-align_left slds-p-bottom_xx-small"
+                                    key={alternateEmail.index}>
+                                    <p class="field-value slds-p-bottom_xx-small" key={alternateEmail.Email_Address__c}>
+                                        {alternateEmail.Email_Address__c} <br />
+                                        <lightning-layout key={alternateEmail.Email_Address__c}>
+                                            <template if:true={alternateEmail.Is_Trusted__c}>
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    <small>{label.Trusted}</small>
+                                                </span>
+                                            </template>
+                                            <template if:true={alternateEmail.Is_Confirmed__c}>
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    <small>{label.Confirmed}</small>
+                                                </span>
+                                            </template>
+                                            <template if:false={alternateEmail.Is_Confirmed__c}>
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    <small>{label.Unconfirmed}</small>
+                                                </span>
+                                            </template>
+                                            <template if:true={alternateEmail.Is_Primary__c}>
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    <small>{label.Primary}</small>
+                                                </span>
+                                            </template>
+                                            <template if:false={alternateEmail.Is_Active__c}>
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    <small>{label.Inactive}</small>
+                                                </span>
+                                            </template>
+                                        </lightning-layout>
+                                    </p>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <lightning-layout vertical-align="stretch" size="12">
+                <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+                    <div class="header-column slds-text-align_left">
+                        <template for:each={alternatePhones} for:item="alternatePhone">
+                            <template if:false={alternatePhone.Is_Primary__c}>
+                                <div class="slds-border_bottom slds-text-align_left slds-p-bottom_xx-small"
+                                    key={alternatePhone.index}>
+                                    <p class="slds-p-bottom_xx-small" title="Alternate Phone Home">
+                                        <strong>
+                                            Alternate Phone ({alternatePhone.Type__c})
+                                            <!--{label.PrimaryPhone}-->
+                                        </strong>
+                                    </p>
+                                    <p class="field-value slds-text-align_left slds-p-bottom_xx-small">
+                                        {alternatePhone.Phone_Number__c}<br />
+                                        <lightning-layout>
+                                            <template if:true={alternatePhone.Is_Trusted__c}>
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    <small>{label.Trusted}</small>
+                                                </span>
+                                            </template>
+                                            <template if:true={alternatePhone.Is_Confirmed__c}>
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    <small>{label.Confirmed}</small>
+                                                </span>
+                                            </template>
+                                            <template if:false={alternatePhone.Is_Confirmed__c}>
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    <small>{label.Unconfirmed}</small>
+                                                </span>
+                                            </template>
+                                            <template if:true={alternatePhone.Is_Primary__c}>
+                                                <span class="slds-badge slds-badge_inverse slds-theme_success">
+                                                    <small>{label.Primary}</small>
+                                                </span>
+                                            </template>
+                                            <template if:false={alternatePhone.Is_Active__c}>
+                                                <span class="slds-badge slds-badge_inverse">
+                                                    <small>{label.Inactive}</small>
+                                                </span>
+                                            </template>
+                                        </lightning-layout>
+                                    </p>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+        <br />
+        <div class="slds-page-header">
+            <span class="slds-badge__icon slds-badge__icon_left">
+                <lightning-icon icon-name="standard:account" alternative-text="Payments">
+                </lightning-icon>
+            </span>
+            <span class="slds-text-title_bold slds-align-middle" title="Payments"> Payments</span>
+        </div>
+        <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleSectionToggle}
+            active-section-name={activeSections}>
+            <lightning-accordion-section name="PayPalDebitCards" label={label.PayPalDebitCards}>
+                <template if:false={hasPaypalDebitCards}>
+                    {label.NotAvailable}
+                </template>
+                <template for:each={paypalDebitCards} for:item="instrument" for:index="index">
+                    <div class="slds-theme_default slds-p-around_xx-small" key={instrument.Wallet_Id__c}>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                            <lightning-icon icon-name={instrument.icon} alternative-text="instruments">
+                                            </lightning-icon>
+                                        </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="">
+                                            <span class="" title={instrument.info}>{instrument.info}</span>
+                                        </div>
+                                        <template if:true={instrument.hasExpiry}>
+                                            <p class="slds-text-color_weak" title="expiration">
+                                                <small>
+                                                    {label.ExpirationDate}:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Expiry_Date__c} year="numeric"
+                                                        month="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="PayPalCredit" label={label.PayPalCredit}>
+                <template if:false={hasPaypalCredit}>
+                    {label.NotAvailable}
+                </template>
+                <template for:each={paypalCredit} for:item="instrument" for:index="index">
+                    <div class="slds-theme_default slds-p-around_xx-small" key={instrument.Wallet_Id__c}>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                            <lightning-icon icon-name={instrument.icon} alternative-text="instruments">
+                                            </lightning-icon>
+                                        </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="">
+                                            <span class="" title={instrument.info}>{instrument.info}</span>
+                                        </div>
+                                        <template if:true={instrument.hasExpiry}>
+                                            <p class="slds-text-color_weak" title="expiration">
+                                                <small>
+                                                    {label.ExpirationDate}:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Expiry_Date__c} year="numeric"
+                                                        month="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="BanksAndCards" label={label.BanksAndCards}>
+                <template if:false={hasBanksAndCards}>
+                    {label.NotAvailable}
+                </template>
+                <template for:each={banksAndCards} for:item="instrument" for:index="index">
+                    <div class="slds-theme_default slds-p-around_xx-small" key={instrument.Wallet_Id__c}>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                            <lightning-icon icon-name={instrument.icon} alternative-text="instruments">
+                                            </lightning-icon>
+                                        </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="">
+                                            <span class="" title={instrument.info}>{instrument.info}</span>
+                                        </div>
+                                        <template if:true={instrument.hasExpiry}>
+                                            <p class="slds-text-color_weak" title="expiration">
+                                                <small>
+                                                    {label.ExpirationDate}:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Expiry_Date__c} year="numeric"
+                                                        month="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="Rewards" label={label.Rewards}>
+                <template if:false={hasRewards}>
+                    {label.NotAvailable}
+                </template>
+                <template for:each={rewards} for:item="instrument" for:index="index">
+                    <div class="slds-theme_default slds-p-around_xx-small" key={instrument.Wallet_Id__c}>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                            <lightning-icon icon-name={instrument.icon} alternative-text="instruments">
+                                            </lightning-icon>
+                                        </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="">
+                                            <span class="" title={instrument.info}>{instrument.info}</span>
+                                        </div>
+                                        <template if:true={instrument.hasExpiry}>
+                                            <p class="slds-text-color_weak" title="expiration">
+                                                <small>
+                                                    {label.ExpirationDate}:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Expiry_Date__c} year="numeric"
+                                                        month="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+        </lightning-accordion>
+        <div class="slds-page-header">
+            <span class="slds-badge__icon slds-badge__icon_left">
+                <lightning-icon icon-name="standard:account" alternative-text="Products">
+                </lightning-icon>
+            </span>
+            <span class="slds-text-title_bold slds-align-middle" title="Products"> Products</span>
+        </div>
+        <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleSectionToggle}
+            active-section-name={activeSections}>
+            <lightning-accordion-section name="PayPalHere" label="PayPal Here">
+                <template if:false={hasPaypalHere}>
+                    {label.NotAvailable}
+                </template>
+                <template for:each={paypalHere} for:item="instrument" for:index="index">
+                    <div class="slds-theme_default slds-p-around_xx-small" key={instrument.index}>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                            <lightning-icon icon-name={instrument.icon} alternative-text="instruments">
+                                            </lightning-icon>
+                                        </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="">
+                                            <span class="" title={instrument.info}>Device ID
+                                                {instrument.deviceID} (
+                                                <template if:true={instrument.hasActivated}><small>Active</small>
+                                                </template>
+                                                <template if:true={instrument.hasDeactivated}><small>Inactive</small>
+                                                </template>
+                                                )
+                                            </span>
+                                        </div>
+                                        <template if:true={instrument.hasActivated}>
+                                            <p class="slds-text-color_weak" title="activated">
+                                                <small>
+                                                    Activated On:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Time_Activated__c} year="numeric"
+                                                        month="2-digit" day="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                        <template if:true={instrument.hasDeactivated}>
+                                            <p class="slds-text-color_weak" title="deactivated">
+                                                <small>
+                                                    Deactivated On:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Time_Deactivated__c} year="numeric"
+                                                        month="2-digit" day="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="UnbrandedCreditCards" label="Unbranded Credit Cards">
+                <template if:false={hasUnbrandedCreditCards}>
+                    {label.NotAvailable}
+                </template>
+                <template for:each={unbrandedCreditCards} for:item="instrument" for:index="index">
+                    <div class="slds-theme_default slds-p-around_xx-small" key={instrument.index}>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                            <lightning-icon icon-name={instrument.icon} alternative-text="instruments">
+                                            </lightning-icon>
+                                        </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="">
+                                            <span class="" title={instrument.info}>{instrument.info}</span>
+                                        </div>
+                                        <template if:true={instrument.hasExpiry}>
+                                            <p class="slds-text-color_weak" title="expiration">
+                                                <small>
+                                                    {label.ExpirationDate}:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Expiry_Date__c} year="numeric"
+                                                        month="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="VirtualTerminal" label="Virtual Terminal">
+                <template if:false={hasVirtualTerminal}>
+                    {label.NotAvailable}
+                </template>
+                <template for:each={virtualTerminal} for:item="instrument" for:index="index">
+                    <div class="slds-theme_default slds-p-around_xx-small" key={instrument.index}>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-title">
+                                <div class="slds-media">
+                                    <div class="slds-media__figure">
+                                        <span class="slds-badge__icon slds-badge__icon_left group-icon">
+                                            <lightning-icon icon-name={instrument.icon} alternative-text="instruments">
+                                            </lightning-icon>
+                                        </span>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <div class="">
+                                            <span class="" title="">Device VT
+                                                <template
+                                                    if:true={instrument.hasActivated}>&nbsp;(<small>Active</small>)</template>
+                                                <template
+                                                    if:true={instrument.hasDeactivated}>&nbsp;(<small>Inactive</small>)</template>
+                                            </span>
+                                        </div>
+                                        <template if:true={instrument.hasActivated}>
+                                            <p class="slds-text-color_weak" title="activated">
+                                                <small>
+                                                    Activated On:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Time_Activated__c} year="numeric"
+                                                        month="2-digit" day="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                        <template if:true={instrument.hasDeactivated}>
+                                            <p class="slds-text-color_weak" title="deactivated">
+                                                <small>
+                                                    Deactivated On:&nbsp;
+                                                    <lightning-formatted-date-time class=""
+                                                        value={instrument.Time_Deactivated__c} year="numeric"
+                                                        month="2-digit" day="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </small>
+                                            </p>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </div>
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium"
+            aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-modal__title"><strong>Secondary Users</strong></h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div>
+                        <lightning-datatable key-field="Id" data={secondaryUsers} columns={secondaryUsersColumns}
+                            sorted-by={sortBy} sorted-direction={sortDirection} onsort={updateColumnSorting}
+                            hide-checkbox-column=true wrap-text-max-lines=1>
+                        </lightning-datatable>
+                    </div>
+                    <!-- Keeping the below for when permissions are added. 
+                    <br />
+                    <div>
+                        <h1 style="font-weight: bold;">Customized table to allow for permissions handling such as a
+                            lightning-tree. Can probably add sorting and additional features.</h1>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="Name">Name</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="EmailAddress">Email Address</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="PhoneNumber">Phone Number</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="Permissions">Permissions</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={secondaryUsersX} for:item="secondaryUser">
+                                    <tr class="slds-hint-parent" key={secondaryUser.index}>
+                                        <td data-label="Name">
+                                            <div class="slds-truncate" title="Name">
+                                                {secondaryUser.Full_Name__c}</div>
+                                        </td>
+                                        <td data-label="Email Address">
+                                            <div class="slds-truncate" title="Email">
+                                                <lightning-formatted-email value={secondaryUser.Email_Address__c}
+                                                    hide-icon>
+                                                </lightning-formatted-email>
+                                            </div>
+                                        </td>
+                                        <td data-label="Phone Number">
+                                            <div class="slds-truncate" title="Phone">
+                                                {secondaryUser.primaryPhone}</div>
+                                        </td>
+                                        <td data-label="Permissions">
+                                            <template if:true={secondaryUser.permissions}>
+                                                <lightning-tree items={secondaryUser.permissions}></lightning-tree>
+                                            </template>
+                                            <template if:false={secondaryUser.permissions}>
+                                                No permissions
+                                            </template>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+-->
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeSUModal}>Cancel</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+</template>

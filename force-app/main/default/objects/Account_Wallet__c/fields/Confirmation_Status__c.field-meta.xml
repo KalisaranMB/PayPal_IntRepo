@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmation_Status__c</fullName>
+    <description>Confirmation status of the financial instrument</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirmation status of the financial instrument</inlineHelpText>
+    <label>Confirmation Status</label>
+    <length>64</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

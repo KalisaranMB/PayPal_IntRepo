@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AccountCreationDate</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountCreationDate</shortDescription>
+        <value>Account Creation Date</value>
+    </labels>
+    <labels>
+        <fullName>AccountNumber</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountNumber</shortDescription>
+        <value>Account Number</value>
+    </labels>
+    <labels>
+        <fullName>AccountStatus</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountStatus</shortDescription>
+        <value>Account Status</value>
+    </labels>
+    <labels>
+        <fullName>AccountType</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountType</shortDescription>
+        <value>Account Type</value>
+    </labels>
+    <labels>
+        <fullName>Address</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>BanksAndCards</fullName>
+        <categories>CustomerProfile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BanksAndCards</shortDescription>
+        <value>Banks &amp; Cards</value>
+    </labels>
+    <labels>
+        <fullName>CustomerName</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerName</shortDescription>
+        <value>Customer Name</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_AccountCountry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerQuickGlance_AccountCountry</shortDescription>
+        <value>Account Country</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_AccountCreated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerQuickGlance_AccountCreated</shortDescription>
+        <value>Account Created</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_AccountFlags</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance AccountFlags</shortDescription>
+        <value>Account Flags</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_AccountNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance AccountNumber</shortDescription>
+        <value>Account Number</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_AccountStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerQuickGlance_AccountStatus</shortDescription>
+        <value>Account Status</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_AccountType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance AccountType</shortDescription>
+        <value>Account Type</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_ComplianceStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerQuickGlance_ComplianceStatus</shortDescription>
+        <value>Compliance Status</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Confirmed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Confirmed</shortDescription>
+        <value>Confirmed</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_CustomerName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerQuickGlance_CustomerName</shortDescription>
+        <value>Customer Name</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_CustomerSegment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance CustomerSegment</shortDescription>
+        <value>Customer Segment</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Emails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Emails</shortDescription>
+        <value>Emails</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Inactive</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Inactive</shortDescription>
+        <value>Inactive</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Phone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Primary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Primary</shortDescription>
+        <value>Primary</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_PrimaryAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerQuickGlance_PrimaryAddress</shortDescription>
+        <value>Primary Address</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Restrictions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Restrictions</shortDescription>
+        <value>Restrictions</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerQuickGlance_Title</shortDescription>
+        <value>Quick Glance</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Trusted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Trusted</shortDescription>
+        <value>Trusted</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Unconfirmed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Unconfirmed</shortDescription>
+        <value>Unconfirmed</value>
+    </labels>
+    <labels>
+        <fullName>CustomerQuickGlance_Work</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuickGlance Work</shortDescription>
+        <value>Work</value>
+    </labels>
+    <labels>
+        <fullName>CustomerTags_Limitation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerTags_Limitation</shortDescription>
+        <value>Limitations</value>
+    </labels>
+    <labels>
+        <fullName>CustomerTags_ManagedAccount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerTags_ManagedAccount</shortDescription>
+        <value>Managed Account</value>
+    </labels>
+    <labels>
+        <fullName>CustomerTags_UnRegistered</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomerTags_UnRegistered</shortDescription>
+        <value>Unregistered Customer</value>
+    </labels>
+    <labels>
+        <fullName>Emails</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Emails</shortDescription>
+        <value>Emails</value>
+    </labels>
+    <labels>
+        <fullName>ExpirationDate</fullName>
+        <categories>CustomerProfile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExpirationDate</shortDescription>
+        <value>Expiration Date</value>
+    </labels>
+    <labels>
+        <fullName>Home</fullName>
+        <categories>CustomerQuickGlance</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home</shortDescription>
+        <value>Home</value>
+    </labels>
+    <labels>
+        <fullName>LinkedBy</fullName>
+        <categories>linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LinkedBy</shortDescription>
+        <value>Linked by</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountComplianceStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountComplianceStatus</shortDescription>
+        <value>Account Compliance Status</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountCountry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountCountry</shortDescription>
+        <value>Account Country</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountCreated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountCreated</shortDescription>
+        <value>Account Created</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountDetails</shortDescription>
+        <value>Account Details</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountFlags</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountFlags</shortDescription>
+        <value>Account Flags</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountNumber</shortDescription>
+        <value>Account Number</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountStatus</shortDescription>
+        <value>Account Status</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_AccountType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_AccountType</shortDescription>
+        <value>Account Type</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_BusinessAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_BusinessAddress</shortDescription>
+        <value>Business Address</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_BusinessDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_BusinessDetails</shortDescription>
+        <value>Business Details</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_BusinessName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_BusinessName</shortDescription>
+        <value>Business Name</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_ContactInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_ContactInfo</shortDescription>
+        <value>Contact Info</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_CustomerName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_CustomerName</shortDescription>
+        <value>Customer Name</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_CustomerServiceEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>import CustomerServiceEmail from &quot;@salesforce/label/c.MerchantQuickGlance_Custom</shortDescription>
+        <value>Customer Service Email</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_CustomerServicePhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_CustomerServicePhone</shortDescription>
+        <value>Customer Service Phone</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_Industry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_Industry</shortDescription>
+        <value>Industry</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_MCCCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_MCCCode</shortDescription>
+        <value>MCC Code</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_PrimaryAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_PrimaryAddress</shortDescription>
+        <value>Primary Address</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_PrimaryEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_PrimaryEmail</shortDescription>
+        <value>Primary Email</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_PrimaryPhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_PrimaryPhone</shortDescription>
+        <value>Primary Phone</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_PrimaryUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_PrimaryUser</shortDescription>
+        <value>Primary User</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_Restrictions</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_Restrictions</shortDescription>
+        <value>Restrictions</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_Role</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_Role</shortDescription>
+        <value>Role</value>
+    </labels>
+    <labels>
+        <fullName>MerchantQuickGlance_UserComplianceStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MerchantQuickGlance_UserComplianceStatus</shortDescription>
+        <value>User Compliance Status</value>
+    </labels>
+    <labels>
+        <fullName>Mobile</fullName>
+        <categories>CustomerQuickGlance</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mobile</shortDescription>
+        <value>Mobile</value>
+    </labels>
+    <labels>
+        <fullName>NotAvailable</fullName>
+        <categories>CustomerProfile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NotAvailable</shortDescription>
+        <value>Not Available</value>
+    </labels>
+    <labels>
+        <fullName>PayPalCredit</fullName>
+        <categories>CustomerProfile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PayPalCredit</shortDescription>
+        <value>PayPal Credit</value>
+    </labels>
+    <labels>
+        <fullName>PayPalDebitCards</fullName>
+        <categories>CustomerProfile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PayPalDebitCards</shortDescription>
+        <value>PayPal Debit Cards</value>
+    </labels>
+    <labels>
+        <fullName>Payments</fullName>
+        <categories>CustomerProfile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payments</shortDescription>
+        <value>Payments</value>
+    </labels>
+    <labels>
+        <fullName>Phones</fullName>
+        <categories>CustomerQuickGlance, linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Phones</shortDescription>
+        <value>Phones</value>
+    </labels>
+    <labels>
+        <fullName>Rewards</fullName>
+        <categories>CustomerProfile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rewards</shortDescription>
+        <value>Rewards</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_AddPhone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_AddPhone</shortDescription>
+        <value>Add Phone</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_AuthFailed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_AuthFailed</shortDescription>
+        <value>Auth Failed</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_AuthOption</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_AuthOption</shortDescription>
+        <value>Auth Option</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_AuthPassed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_AuthPassed</shortDescription>
+        <value>Auth Passed</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_CouldntAddPhone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_CouldntAddPhone</shortDescription>
+        <value>Couldn&apos;t Add Phone</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_CouldntSendOTP</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_CouldntSendOTP</shortDescription>
+        <value>Couldn&apos;t Send OTP to Selected Phone</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_EnterCountryCode</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_EnterCountryCode</shortDescription>
+        <value>Enter Country Code</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_EnterNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_EnterNumber</shortDescription>
+        <value>Enter Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_EnterOTP</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_EnterOTP</shortDescription>
+        <value>Enter Customer Provided OTP</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_NoAuthRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_NoAuthRequired</shortDescription>
+        <value>No Auth Required</value>
+    </labels>
+    <labels>
+        <fullName>StepUpFlow_SelectPhone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StepUpFlow_SelectPhone</shortDescription>
+        <value>Select Phone</value>
+    </labels>
+    <labels>
+        <fullName>StronglyLinked</fullName>
+        <categories>linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StronglyLinked</shortDescription>
+        <value>Strongly Linked</value>
+    </labels>
+    <labels>
+        <fullName>Wallet</fullName>
+        <categories>linkedAccounts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Wallet</shortDescription>
+        <value>Wallet</value>
+    </labels>
+</CustomLabels>

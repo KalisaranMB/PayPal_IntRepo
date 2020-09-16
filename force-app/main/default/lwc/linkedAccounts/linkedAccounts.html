@@ -1,0 +1,253 @@
+<template>
+    <lightning-layout multiple-rows>
+        <template for:each={linkedAccounts} for:item="account" > 
+            <lightning-layout-item key={account} padding="around-small" size=6>
+                <template if:true={account.Has_Strong_Link__c}>
+                    <div class="bg-box strong-box slds-box slds-theme_default">
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                <p class="">{label.AccountType}:</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Account_Type__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.AccountNumber}:
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Account_Number__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.CustomerName}:
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Full_Name__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.AccountCreation}: 
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                <lightning-formatted-date-time class="field-value" value={account.Account_Created_Time__c} year="numeric" month="numeric" day="numeric" ></lightning-formatted-date-time>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.AccountStatus}:
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Account_Status__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                <b>{label.StronglyLinked}:</b>
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                            <b>Yes</b>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.LinkedBy}
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <template if:true={account.has_name}>
+                            <lightning-layout multiple-rows>
+                                <lightning-layout-item size=5>
+                                    {label.CustomerName}
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>  
+                                    {account.linkedByName}
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_emails}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.Emails}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.emails} for:item="email">
+                                        {email}
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_addresses}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.PrimaryAddress}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.addresses} for:item="address">
+                                        {address}
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_phones}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.Phone}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.phones} for:item="phone">
+                                        {phone}
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_cards}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.Wallet}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.cards} for:item="card">
+                                        {card.Issuer_Name__c} - {card.Financial_Instrument_Subtype__c} - {card.Financial_Instrument_Type__c} X- {card.Last_4_digits__c}
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        
+                    </div>
+                </template>
+                <template if:false={account.Has_Strong_Link__c}>
+                    <div class="bg-box slds-box slds-theme_default">
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                <p class="">{label.AccountType}:</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Account_Type__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.AccountNumber}:
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Account_Number__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.CustomerName}:
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Full_Name__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.AccountCreation}: 
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                <lightning-formatted-date-time class="field-value" value={account.Account_Created_Time__c} year="numeric" month="numeric" day="numeric" ></lightning-formatted-date-time>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.AccountStatus}:
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                                {account.Account_Status__c}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                <b>{label.StronglyLinked}:</b>
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                            <b>No</b>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size=5>
+                                {label.LinkedBy}
+                            </lightning-layout-item>
+                            <lightning-layout-item size=7>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <template if:true={account.has_name}>
+                            <lightning-layout multiple-rows>
+                                <lightning-layout-item size=5>
+                                    {label.CustomerName}
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>  
+                                    {account.linkedByName}
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_emails}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.Emails}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.emails} for:item="email">
+                                        {email}<br key={email} />
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_addresses}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.PrimaryAddress}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.addresses} for:item="address">
+                                        <lightning-formatted-address
+                                            key={address}
+                                            street={address.Address_Line_1__c}
+                                            city={address.Admin_Area_3__c}
+                                            country={address.Country__c}
+                                            province={address.Admin_Area_2__c}
+                                            postal-code={address.Postal_Code__c}
+                                            disabled
+                                        ></lightning-formatted-address>
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_phones}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.Phone}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.phones} for:item="phone">
+                                        {phone}
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={account.has_cards}>
+                            <lightning-layout>
+                                <lightning-layout-item size=5>
+                                    {label.Wallet}:
+                                </lightning-layout-item>
+                                <lightning-layout-item size=7>
+                                    <template for:each={account.cards} for:item="card">
+                                        {card.Issuer_Name__c} - {card.Financial_Instrument_Subtype__c} - {card.Financial_Instrument_Type__c} X- {card.Last_4_digits__c}
+                                    </template>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        
+                    </div>
+                </template>
+                
+            </lightning-layout-item>
+        </template>
+</lightning-layout>
+</template>

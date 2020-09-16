@@ -1,0 +1,66 @@
+<template>
+    <div class="slds-box slds-box_small">
+    <lightning-card  title="Interaction Details" icon-name="custom:custom14">
+        <lightning-layout-item>
+            <div class="name">{channelName} </div>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small">
+            <span> Interaction Date : {channelSummary.timeStamp} </span>
+        </lightning-layout-item>
+
+
+        <template if:true={isTeammateTools}>
+            <template if:true={isSummaryAvailable} >
+                <div class="slds-box slds-box_small"><b>Interaction Summary</b>
+                    <template for:each={channelSummary.channelSummaryDetails} for:item="summary">
+                        <p key={summary.name}> {summary.name}</p>
+                        <p key={summary.notes}>{summary.notes}</p>
+                    </template>
+                </div>
+            </template>
+        </template>
+
+        <template if:true={isChatbot}>
+           <c-chat-bot></c-chat-bot>
+        </template>
+
+        <template if:true={isHC}>
+            <template if:true={isSummaryAvailable} >
+                <div class="slds-box slds-box_small">
+                    <b>Interaction Summary</b>
+                    <br/><i>Customer clicked below FAQ articles in {channelName}</i>
+                    <br/>
+                    <table>
+                        <tbody>
+                            <template for:each={channelSummary.channelSummaryDetails} for:item="hcSummary">
+                                <tr key={hcSummary.name}>
+                                    <th>
+                                        <div>
+                                            {hcSummary.name}
+                                        </div>
+                                    </th>
+                                    <th scope="col">
+                                       <a href={hcSummary.notes} target="_blank"> Preview</a>
+                                    </th>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table> 
+                </div>
+            </template>
+        </template>
+
+
+        <!-- Stepup Activity details for all the channels-->
+        <div class="slds-box slds-box_small "><b>Stepup Activity</b>
+            <template for:each={channelSummary.stepUpDetails} for:item="stepup">
+                <p key={stepup.name}>Stepup Type: {stepup.type}</p>
+                <p key={stepup.name}>Stepup Sattus: {stepup.status}</p>
+            </template>
+        </div>
+        
+  </lightning-card>
+</div>
+  
+</template>

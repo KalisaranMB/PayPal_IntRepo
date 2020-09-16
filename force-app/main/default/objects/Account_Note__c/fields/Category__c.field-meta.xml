@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>Notes Category - like Title</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Notes Category - like Title</inlineHelpText>
+    <label>Category</label>
+    <length>512</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

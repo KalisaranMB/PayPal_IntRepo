@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Last 4 digits of the financial instrument that funded this transaction --></help>
+    <label><!-- Last 4 digits --></label>
+    <name>Last_4_digits__c</name>
+</CustomFieldTranslation>

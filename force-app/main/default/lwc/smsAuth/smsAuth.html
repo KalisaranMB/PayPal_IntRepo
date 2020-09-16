@@ -1,0 +1,29 @@
+<template>
+    <p>
+        SMS / Text Options for Step Up
+    </p>
+    <lightning-radio-group name="phoneSelectionRadioGroup"
+                          options={smsauthDetails.phones}
+                          value={selectedPhone}
+                          onchange={phoneSelected}
+                          type="radio"></lightning-radio-group>
+    <a><lightning-formatted-text value="Or Add a New Number" linkify onclick={openAddNumberScreen}></lightning-formatted-text></a>
+    <c-add-new-number class="add-number-component" if:true={show} 
+                            oncloseclick={handleCloseClick}
+                            onverifyclick={handleAddNumber}></c-add-new-number>
+ 
+    <lightning-checkbox-group name="Checkbox Group"
+                              label="Checkbox Group"
+                              options={smsauthDetails.agreements}
+                              value={agreements}
+                              onchange={agreementChecked}></lightning-checkbox-group>
+    <template if:false={codeSent}>
+        <lightning-button variant="brand-outline" label="Send Code" onclick={sendCode} class="slds-m-left_x-small" ></lightning-button>
+    </template>
+
+    <template if:true={codeSent}>
+        <lightning-button variant="brand-outline" label="Send Code" onclick={sendCode} class="slds-m-left_x-small" ></lightning-button>
+        <lightning-input type="text" label="Customer Provided Code" value={code} onchange={setCode}></lightning-input>
+        <lightning-button variant="brand" label="Verify" onclick={verify} class="slds-m-left_x-small" ></lightning-button>
+    </template>  
+</template>

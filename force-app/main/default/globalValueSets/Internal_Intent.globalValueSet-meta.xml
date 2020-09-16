@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ATO Decline</fullName>
+        <default>false</default>
+        <label>ATO Decline</label>
+    </customValue>
+    <customValue>
+        <fullName>Auth Decline</fullName>
+        <default>false</default>
+        <label>Auth Decline</label>
+    </customValue>
+    <customValue>
+        <fullName>CC Member Decline</fullName>
+        <default>false</default>
+        <label>CC Member Decline</label>
+    </customValue>
+    <customValue>
+        <fullName>CC WAX Decline</fullName>
+        <default>false</default>
+        <label>CC WAX Decline</label>
+    </customValue>
+    <customValue>
+        <fullName>Collusion Decline</fullName>
+        <default>false</default>
+        <label>Collusion Decline</label>
+    </customValue>
+    <masterLabel>Internal Intent</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

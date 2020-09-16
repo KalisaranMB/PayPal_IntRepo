@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Limitation__c</fullName>
+    <description>Access change associated with the limitation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Access change associated with the limitation</inlineHelpText>
+    <label>Account Limitation</label>
+    <referenceTo>Account_Limitation__c</referenceTo>
+    <relationshipLabel>Limitation Access Changes</relationshipLabel>
+    <relationshipName>Limitation_Access_Changes</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

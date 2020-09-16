@@ -1,0 +1,6 @@
+.test::before {
+  background-color: #DDDBDA;
+}
+.hide{
+  display:none;
+}

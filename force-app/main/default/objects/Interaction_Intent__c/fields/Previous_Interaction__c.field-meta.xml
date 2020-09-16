@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Previous_Interaction__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Intents associated with a previous interaction</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Intents associated with a previous interaction</inlineHelpText>
+    <label>Previous Interaction</label>
+    <referenceTo>Previous_Interaction__c</referenceTo>
+    <relationshipLabel>Interaction Intents</relationshipLabel>
+    <relationshipName>Interaction_Intents</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

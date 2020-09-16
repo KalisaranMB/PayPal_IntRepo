@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Unregistered__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Customers can use PayPal without registering for an account or do guest checkout even if they have one. This flag indicated whether the account is registered or not.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is this Account not registered yet?</inlineHelpText>
+    <label>Is Unregistered</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

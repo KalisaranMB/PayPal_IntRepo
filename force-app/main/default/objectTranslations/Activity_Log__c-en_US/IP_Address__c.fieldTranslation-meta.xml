@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- IP Address associated with the activity --></help>
+    <label><!-- IP Address --></label>
+    <name>IP_Address__c</name>
+</CustomFieldTranslation>

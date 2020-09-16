@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Is this interaction has a follow-up scheduled? --></help>
+    <label><!-- Has Followup --></label>
+    <name>Has_Followup__c</name>
+</CustomFieldTranslation>

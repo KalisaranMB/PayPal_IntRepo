@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account1__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Account in one side of the linking</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Account in one side of the linking</inlineHelpText>
+    <label>Account1</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Linked Accounts (Account1)</relationshipLabel>
+    <relationshipName>Linked_Accounts1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

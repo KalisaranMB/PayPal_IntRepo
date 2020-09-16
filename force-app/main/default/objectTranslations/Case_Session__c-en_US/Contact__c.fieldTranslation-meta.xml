@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Party id that is currently contacting us. For personal accounts, this will be same as the primary owner associated with the contact. For business accounts, this could be either the primary owner or the secondary user. --></help>
+    <label><!-- Contact --></label>
+    <name>Contact__c</name>
+    <relationshipLabel><!-- Case Sessions --></relationshipLabel>
+</CustomFieldTranslation>

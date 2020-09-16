@@ -1,0 +1,36 @@
+<template>
+    <lightning-button id="LightningTest" label="LightningTestLabel" onclick={showNotification}>
+        LightningTestLabel
+    </lightning-button>
+    <template if:true={isMerchant}>
+        <lightning-card style="border-radius: .25rem;">
+
+            <lightning-badge label="Account with Restrictions" icon-name="standard:event"></lightning-badge>
+            <lightning-badge label="Managed Account" icon-name="standard:email" ></lightning-badge>
+            <!-- TODO have a layout to align these since there might be more than 2 of these -->
+        </lightning-card>
+        <lightning-tabset>
+            <lightning-tab label="Quick Glance">
+                <c-merchant-quick-glance>
+                </c-merchant-quick-glance>
+            </lightning-tab>
+            <lightning-tab label="Customer Profile" title="2nd tab extended title">
+                <c-merchant-profile>
+
+                </c-merchant-profile>
+            </lightning-tab>
+        </lightning-tabset>
+    </template>
+    <template if:true={isConsumer}>
+        <lightning-tabset>
+            <lightning-tab label="Quick Glance">
+               <c-customer-quick-glance></c-customer-quick-glance>
+            </lightning-tab>
+            <lightning-tab label="Customer Profile" title="2nd tab extended title">
+                <c-customer-profile></c-customer-profile>
+            </lightning-tab>
+        </lightning-tabset>
+    </template>
+    
+
+</template>

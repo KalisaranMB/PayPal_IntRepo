@@ -1,0 +1,43 @@
+/*
+.header-column {
+  margin-top: 0.25rem;
+}
+.group-title {
+  font-size: 14px;
+  display: inline;
+  vertical-align: middle;
+}
+.field-title {
+  font-size: .7rem;
+  line-height: 1.1rem;
+  margin-bottom: .25rem;
+  font-style: normal;
+  font-weight: 600;
+}
+.field-value {
+  font-size: .7rem;
+  line-height: 1.1rem;
+  margin-bottom: 4px;
+  font-style: normal;
+  font-weight: normal;
+}
+.complianceStatus-in-progress {
+  color: #ff9600;
+}
+.complianceStatus-not-started {
+  color: #ff9600;
+}
+.status-locked-icon {
+  color: #1589ee;
+}
+.solid {
+  position: absolute;
+  bottom: 0px;
+  border: 1px solid #e3e1e1;
+  height: 0;
+  margin: 0;
+}
+.divider-half {
+  width: 80%;
+}
+*/

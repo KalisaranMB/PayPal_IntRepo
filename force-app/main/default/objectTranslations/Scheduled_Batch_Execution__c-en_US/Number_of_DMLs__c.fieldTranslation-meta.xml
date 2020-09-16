@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total number of DMLs executed in the batch. This data point will be helpful especially for cleanup batches. --></help>
+    <label><!-- Number of DMLs --></label>
+    <name>Number_of_DMLs__c</name>
+</CustomFieldTranslation>

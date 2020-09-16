@@ -1,0 +1,282 @@
+<template>
+  <div>
+    <!--______________Account Details_________________-->
+    <div class="slds-page-header">
+      <span class="slds-badge__icon slds-badge__icon_left">
+        <lightning-icon icon-name="standard:account" alternative-text={label.AccountDetails}>
+        </lightning-icon>
+      </span>
+      <span class="slds-text-title_bold slds-align-middle" title={label.AccountDetails}> {label.AccountDetails}</span>
+    </div>
+    <lightning-layout multiple-rows="true">
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Account Number"><strong>
+                  {label.AccountNumber}
+                </strong></p>
+              <p class="field-value slds-p-bottom_xx-small ">{accountInfo.AccountNumber}</p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Account Type"><strong>
+                  {label.AccountType}
+                </strong></p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Account_Type__c}</p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Account Status"><strong>
+                  {label.AccountStatus}
+                </strong></p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Account_Status__c}
+                <template if:true={accountStatusLocked}>
+                  <span class="status-locked-icon">
+                    <lightning-icon icon-name="utility:lock" class="slds-current-color" size="x-small"
+                      alternative-text="locked"></lightning-icon>
+                  </span>
+                </template>
+                <template if:false={accountStatusLocked}>
+                  <lightning-icon icon-name="utility:unlock" size="x-small" alternative-text="locked" variant="success">
+                  </lightning-icon>
+                </template>
+              </p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Account Country"><strong>
+                  {label.AccountCountry}
+                </strong></p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Country_Name__c}</p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Restrictions"><strong>
+                  {label.Restrictions}
+                </strong></p>
+              <template if:true={accountRestrictionsList}>
+                <template for:each={accountRestrictionsList} for:item="accountRestriction">
+                  <p class="field-value slds-p-bottom_xx-small" key={accountRestriction.key}>{accountRestriction.value}
+                  </p>
+                </template>
+              </template>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Account Flags"><strong>
+                  {label.AccountFlags}
+                </strong></p>
+              <template if:true={accountFlagsList}>
+                <template for:each={accountFlagsList} for:item="accountFlag">
+                  <p class="field-value slds-p-bottom_xx-small" key={accountFlag.key}>{accountFlag.value}</p>
+                </template>
+              </template>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Primary User"><strong>{label.PrimaryUser}</strong>
+              </p>
+              <p class="field-value slds-p-bottom_xx-small">{primaryParty.Full_Name__c}</p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="primary Phone"><strong>{label.PrimaryPhone}</strong>
+              </p>
+              <p class="field-value slds-p-bottom_xx-small">{primaryPhone}</p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Primary Email"><strong>{label.PrimaryEmail}</strong>
+              </p>
+              <p class="field-value slds-p-bottom_xx-small">{primaryEmail}</p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Account Created"><strong>
+                  {label.AccountCreated}
+                </strong></p>
+              <p class="field-value slds-p-bottom_xx-small">
+                <lightning-formatted-date-time value={accountInfo.Account_Created_Time__c}>
+                </lightning-formatted-date-time>
+              </p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Compliance Status"><strong>
+                  {label.AccountComplianceStatus}
+                </strong></p>
+              <p class={accountComplianceStatusClass}>{accountInfo.CIP_Status__c}</p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+    </lightning-layout>
+    <br />
+    <!--______________Contact Info_________________-->
+    <div class="slds-page-header">
+      <span class="slds-badge__icon slds-badge__icon_left">
+        <lightning-icon icon-name="standard:account" alternative-text={label.ContactInfo}>
+        </lightning-icon>
+      </span>
+      <span class="slds-text-title_bold slds-align-middle" title={label.ContactInfo}> {label.ContactInfo}</span>
+    </div>
+    <lightning-layout multiple-rows="true">
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Customer Name"><strong>{label.CustomerName}</strong>
+              </p>
+              <p class="field-value slds-p-bottom_xx-small">
+                <template if:false={isContactedPartyAvailable}>{label.NotAvailable}</template>
+                <template if:true={isContactedPartyAvailable}>{contactedParty.Full_Name__c}</template>
+              </p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="Role"><strong>{label.Role}</strong></p>
+              <p class="field-value slds-p-bottom_xx-small">
+                <template if:false={isContactedPartyAvailable}>{label.NotAvailable}</template>
+                <template if:true={isContactedPartyAvailable}>{contactPartyRole}</template>
+              </p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column slds-text-align_left">
+              <p class="field-title slds-p-bottom_xx-small" title="User Compliance Status">
+                <strong>{label.UserComplianceStatus}</strong>
+              </p>
+              <p class={userComplianceStatusClass}>
+                <template if:false={isContactedPartyAvailable}>{label.NotAvailable}</template>
+                <template if:true={isContactedPartyAvailable}>{contactedParty.CIP_Status__c}</template>
+              </p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small slds-border_bottom">
+            <div class="header-column">
+              <p class="field-title slds-p-bottom_xx-small" title="Primary Address">
+                <strong>{label.PrimaryAddress}</strong></p>
+              <p class="field-value slds-p-bottom_xx-small">
+                <template if:false={isContactAddressAvailable}>{label.NotAvailable}</template>
+                <template if:true={isContactAddressAvailable}>
+                  <lightning-formatted-address street={contactAddress.Address_Line_1__c}
+                    city={contactAddress.Admin_Area_3__c} country={contactAddress.Country__c}
+                    province={contactAddress.Admin_Area_2__c} postal-code={contactAddress.Postal_Code__c} disabled>
+                  </lightning-formatted-address>
+                </template>
+              </p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+    </lightning-layout>
+    <br />
+    <!--______________Business Details_________________-->
+    <div class="slds-page-header">
+      <span class="slds-badge__icon slds-badge__icon_left">
+        <lightning-icon icon-name="standard:account" alternative-text={label.BusinessDetails}>
+        </lightning-icon>
+      </span>
+      <span class="slds-text-title_bold slds-align-middle" title={label.BusinessDetails}> {label.BusinessDetails}</span>
+    </div>
+    <lightning-layout multiple-rows="true">
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+            <div class="header-column slds-text-align_left slds-border_bottom">
+              <p class="field-title slds-p-bottom_xx-small" title="Business Name"><strong>{label.BusinessName}</strong>
+              </p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Name}</p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small">
+            <div class="header-column slds-text-align_left slds-border_bottom">
+              <p class="field-title slds-p-bottom_xx-small" title="Business Address">
+                <strong>{label.BusinessAddress}</strong></p>
+              <p class="field-value slds-p-bottom_xx-small">
+                <lightning-formatted-address street={businessAddress.Address_Line_1__c}
+                  city={businessAddress.Admin_Area_3__c} country={businessAddress.Country__c}
+                  province={businessAddress.Admin_Area_2__c} postal-code={businessAddress.Postal_Code__c} disabled>
+                </lightning-formatted-address>
+              </p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small ">
+            <div class="header-column slds-text-align_left slds-border_bottom">
+              <p class="field-title slds-p-bottom_xx-small" title="Industry"><strong>{label.Industry}</strong></p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Industry_Name__c}</p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small ">
+            <div class="header-column slds-text-align_left slds-border_bottom">
+              <p class="field-title slds-p-bottom_xx-small" title="MCC Code"><strong>{label.MCCCode}</strong></p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Merchant_Category_Code__c}</p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+      <lightning-layout-item size="12">
+        <lightning-layout vertical-align="stretch" size="12">
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small ">
+            <div class="header-column slds-text-align_left slds-border_bottom">
+              <p class="field-title slds-p-bottom_xx-small" title="Customer Service Email">
+                <strong>{label.CustomerServiceEmail}</strong>
+              </p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Customer_Service_Email__c}</p>
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="6" class="slds-is-relative slds-p-around_xx-small ">
+            <div class="header-column slds-text-align_left slds-border_bottom">
+              <p class="field-title slds-p-bottom_xx-small" title="Customer Service Phone">
+                <strong>{label.CustomerServicePhone}</strong>
+              </p>
+              <p class="field-value slds-p-bottom_xx-small">{accountInfo.Customer_Service_Phone__c}</p>
+            </div>
+          </lightning-layout-item>
+        </lightning-layout>
+      </lightning-layout-item>
+    </lightning-layout>
+  </div>
+</template>

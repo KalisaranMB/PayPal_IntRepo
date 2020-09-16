@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag value - either true or false</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Flag value - true or false</inlineHelpText>
+    <label>Value</label>
+    <type>Checkbox</type>
+</CustomField>

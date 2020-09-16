@@ -1,0 +1,33 @@
+<aura:component implements="lightning:utilityItem" access="global" controller="ToolInterplayController">
+    <lightning:workspaceAPI aura:id="workspace" />
+    <!-- <aura:handler event="lightning:tabCreated" action="{!c.onTabCreated}" /> -->
+    <!-- https://developer.salesforce.com/docs/atlas.en-us.api_console.meta/api_console/sforce_api_console_lightning_opentab.htm -->
+    <lightning:button label="Open Smith's Computer Limited2" onclick="{!c.openAcctTab1}"/>    
+    <lightning:button label="Open Case 00001012" onclick="{!c.openCaseTab}"/>
+
+    <lightning:button label="Create new case in Smith's Account" onclick="{!c.createCase1}"/> 
+
+    <!-- https://developer.salesforce.com/docs/atlas.en-us.api_console.meta/api_console/sforce_api_console_lightning_openSubtab.htm -->
+    <!--
+    <lightning:button label="Open Case 1012 And Smith's Account" onclick="{!c.openCaseAndAcct}"/>
+    <lightning:button label="Open Case 1012 In Smith's Account" onclick="{!c.openCaseInAcct}"/>
+    -->
+
+    <!-- https://developer.salesforce.com/docs/atlas.en-us.api_console.meta/api_console/sforce_api_console_lightning_closeTab.htm -->
+    <lightning:button label="Close Smith's Computer Limited" onclick="{!c.closeAcctTab}"/>    
+    <lightning:button label="Close Case 00001012" onclick="{!c.closeCaseTab}"/>   
+    <!--
+    <lightning:button label="Close Case 1012 In Smith's Account" onclick="{!c.closeCaseInAcct}"/>   
+    -->
+    
+    
+   
+ </aura:component>
+
+ <!--
+<aura:component implements="lightning:backgroundUtilityItem">
+    <aura:attribute name="limit" default="5" type="Integer" />
+    <aura:handler event="lightning:tabCreated" action="{!c.onTabCreated}" />
+    <lightning:workspaceAPI aura:id="workspace" />
+</aura:component>
+ -->

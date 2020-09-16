@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Reason__c</fullName>
+    <description>Contact reason for the current Interaction. This contact tracking can be automatic or manual depending on what business prefers.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Contact reason for the current Interaction</inlineHelpText>
+    <label>Contact Reason</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

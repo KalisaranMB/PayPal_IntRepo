@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship__c</fullName>
+    <description>We could have used &quot;Direct&quot; relationship to depict the relationship, but there are two reasons to going with custom field.
+1) A party can be an owner for zero or one or more Accounts, but SF allows only one primary contact per contact which will not suit us.
+2) More relationships may emerge in future</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Relationship between the contact and Account.</inlineHelpText>
+    <label>Relationship</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PRIMARY_OWNER</fullName>
+                <default>true</default>
+                <label>PRIMARY_OWNER</label>
+            </value>
+            <value>
+                <fullName>SECONDARY_USER</fullName>
+                <default>false</default>
+                <label>SECONDARY_USER</label>
+            </value>
+            <value>
+                <fullName>NONE</fullName>
+                <default>false</default>
+                <label>NONE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

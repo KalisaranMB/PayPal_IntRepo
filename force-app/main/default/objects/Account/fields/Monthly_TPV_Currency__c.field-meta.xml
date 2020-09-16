@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_TPV_Currency__c</fullName>
+    <description>ISO Currency code associated with the Monthly TPV</description>
+    <externalId>false</externalId>
+    <inlineHelpText>ISO Currency code associated with the Monthly TPV</inlineHelpText>
+    <label>Monthly TPV Currency</label>
+    <length>3</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

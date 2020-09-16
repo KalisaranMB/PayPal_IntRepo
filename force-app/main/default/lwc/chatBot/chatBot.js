@@ -1,0 +1,16 @@
+import { LightningElement, track } from 'lwc';
+import CustomerJourneySummary from 'c/customerJourneySummary';
+
+export default class ChatBot extends LightningElement {
+    respo = [{ "channelSummaryDetails": [{ "name": "Jennifer", "notes": "Test conversation 1", "timeStamp": "9:55 am", "workflowDetails": "" }, { "name": "TM", "notes": "Test conversation 2", "timeStamp": "9:58 am", "workflowDetails": "" }, { "name": "Jennifer", "notes": "Test conversation 3", "timeStamp": "10:00 am", "workflowDetails": "" }, { "name": "TM", "notes": "Test conversation 4", "timeStamp": "10:05 am", "workflowDetails": "" }], "channeltype": "chatbot", "interactionId": "0", "stepUpDetails": [{ "status": "Success", "type": "SMS" }, { "status": "Success", "type": "Email" }], "timeStamp": "2020-07-15 04:46:16" }, { "channelSummaryDetails": [{ "name": "https://www.paypal.com/in/smarthelp/article/paypal%E2%80%99s-response-to-the-coronavirus-(covid-19)-pandemic-&-faqs-faq4003", "notes": "", "timeStamp": "", "workflowDetails": "" }, { "name": "https://www.paypal.com/in/smarthelp/article/how-do-i-link-an-india-bank-account-to-my-paypal-account-faq686", "notes": "", "timeStamp": "", "workflowDetails": "" }, { "name": "https://www.paypal.com/in/smarthelp/article/can-i-cancel-a-paypal-payment-that-i've-already-sent-faq637", "notes": "", "timeStamp": "", "workflowDetails": "" }, { "name": "https://www.paypal.com/in/smarthelp/article/what-is-gst-and-how-does-it-apply-to-paypal-services-in-india-what-if-i%E2%80%99m-in-a-special-economy-zone-faq3744", "notes": "", "timeStamp": "", "workflowDetails": "" }], "channeltype": "help_center", "interactionId": "1", "stepUpDetails": [{ "status": "Success", "type": "SMS" }], "timeStamp": "14 Jul 2020 04:46" }, { "channelSummaryDetails": [{ "name": "https://www.paypal.com/in/smarthelp/article/paypal%E2%80%99s-response-to-the-coronavirus-(covid-19)-pandemic-&-faqs-faq4003", "notes": "", "timeStamp": "", "workflowDetails": "" }, { "name": "https://www.paypal.com/in/smarthelp/article/how-do-i-link-an-india-bank-account-to-my-paypal-account-faq686", "notes": "", "timeStamp": "", "workflowDetails": "" }], "channeltype": "IVR", "interactionId": "2", "stepUpDetails": [], "timeStamp": "2020-07-12 04:46:16" }, { "channelSummaryDetails": [{ "name": "Payment Decline", "notes": "test notes", "timeStamp": "", "workflowDetails": "completed" }], "channeltype": "compass", "interactionId": "3", "stepUpDetails": [], "timeStamp": "2020-07-14 04:46:16" }];
+    @track messages = [{ "name": "Jennifer", "notes": "Test conversation 1", "timeStamp": "9:55 am", "workflowDetails": "", "isAgent": false }, { "name": "TM", "isAgent": true, "notes": "Test conversation 2", "timeStamp": "9:58 am", "workflowDetails": "" }, { "name": "Jennifer", "notes": "Test conversation 3", "timeStamp": "10:00 am", "workflowDetails": "", "isAgent": false }, { "name": "TM", "isAgent": true, "notes": "Test conversation 4", "timeStamp": "10:05 am", "workflowDetails": "" }];
+
+    // res1=parse();
+
+    parse() {
+        // this.res1=CustomerJourneySummary.channelSummary();
+        //   this.res1=this.respo.channelSummaryDetails.channeltype=='chatbot';
+        console.log('response:::' + this.messages);
+    }
+
+}

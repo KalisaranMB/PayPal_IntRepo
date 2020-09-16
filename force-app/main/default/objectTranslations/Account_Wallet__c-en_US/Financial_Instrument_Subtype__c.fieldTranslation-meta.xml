@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Financial Instrument Subtype - For card it could be Credit/Debit, For bank it could be checking/saving and so on. --></help>
+    <label><!-- Financial Instrument Subtype --></label>
+    <name>Financial_Instrument_Subtype__c</name>
+</CustomFieldTranslation>

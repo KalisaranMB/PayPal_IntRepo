@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Id__c</fullName>
+    <description>Unique identifier for this phone in the system of record</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Unique identifier for this phone in the system of record</inlineHelpText>
+    <label>Phone Id</label>
+    <length>64</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

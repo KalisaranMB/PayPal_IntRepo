@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a message passed from the widgetFilter component when a user selects filters.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This represents the keyword the user has filtered by</description>
+        <fieldName>keyword</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The start date of the range to be filtered by</description>
+        <fieldName>startDate</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>The end date of the range to be filtered by</description>
+        <fieldName>endDate</fieldName>
+    </lightningMessageFields>
+    <masterLabel>WidgetFilter</masterLabel>
+</LightningMessageChannel>

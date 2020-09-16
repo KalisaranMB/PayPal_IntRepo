@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Strong_Link__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Whether the attribute is strongly linked or not. For e.g., an inactive email in account 1 could be matching with active email in account 2. In this case, we will consider these accounts as linked and it is linked by email address, but it is not a strong link for validation purposes since the email is inactive in an account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is the attribute strongly linked?</inlineHelpText>
+    <label>Has Strong Link</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

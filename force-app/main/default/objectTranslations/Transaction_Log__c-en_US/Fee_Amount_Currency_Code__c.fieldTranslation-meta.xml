@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Fee Amount Currency Code --></help>
+    <label><!-- Fee Amount Currency Code --></label>
+    <name>Fee_Amount_Currency_Code__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenant__c</fullName>
+    <description>Tenant name in the multi-tenant environment. PayPal will be the first tenant, but soon we will be adding more tenants like Venmo, Xoom, iZettle and so on.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Tenant Name</inlineHelpText>
+    <label>Tenant</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Tenant</valueSetName>
+    </valueSet>
+</CustomField>

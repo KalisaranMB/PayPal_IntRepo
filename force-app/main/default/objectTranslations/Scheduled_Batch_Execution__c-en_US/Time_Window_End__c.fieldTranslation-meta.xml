@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Batch execution sometimes do time based record processing - like recent records or old ones for cleanup. This field will indicate end time of the execution. --></help>
+    <label><!-- Time Window End --></label>
+    <name>Time_Window_End__c</name>
+</CustomFieldTranslation>

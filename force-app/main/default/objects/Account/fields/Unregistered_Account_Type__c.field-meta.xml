@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unregistered_Account_Type__c</fullName>
+    <description>If the account is not registered with PayPal, this field will indicate type of the account like Guest, WAX or DCC.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the account is not registered with PayPal, this field will indicate type of the account like Guest, WAX or DCC.</inlineHelpText>
+    <label>Unregistered Account Type</label>
+    <length>64</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

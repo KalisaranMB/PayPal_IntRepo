@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Admin_Merchant_Category_Code__c</fullName>
+    <description>This is the merchant category code entered by the teammate based on his/her assessment which could be different than the one given by the user at the time of PayPal account registration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the merchant category code entered by the teammate based on his/her assessment which could be different than the one given by the user at the time of PayPal account registration.</inlineHelpText>
+    <label>Admin Merchant Category Code</label>
+    <length>128</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

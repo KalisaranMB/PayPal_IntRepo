@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Unique identifier for the corresponding financial instrument --></help>
+    <label><!-- Wallet Id --></label>
+    <name>Wallet_Id__c</name>
+</CustomFieldTranslation>

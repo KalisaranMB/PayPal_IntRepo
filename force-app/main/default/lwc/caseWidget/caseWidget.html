@@ -1,0 +1,40 @@
+<template>
+    <lightning-card>
+        <template if:true={error}>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                <span class="slds-assistive-text">error</span>
+                <lightning-icon icon-name="utility:error" alternative-text="Error" title="Error" variant="inverse" size="small" class="slds-var-m-right_small"></lightning-icon>
+                <h2>{error.body.message}</h2>
+            </div>
+        </template>
+        <template if:true={noContextId}>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                <span class="slds-assistive-text">error</span>
+                <lightning-icon icon-name="utility:error" alternative-text="Error" title="Error" variant="inverse" size="small" class="slds-var-m-right_small"></lightning-icon>
+                <h2>No Context Id found.  Please return to the Case and re-open from Quick Tools.</h2>
+            </div>
+        </template>  
+        <template if:true={noDataFound}>
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+                <span class="slds-assistive-text">No Data Found</span>
+                <lightning-icon icon-name="utility:prompt" alternative-text="No Data" title="No Data" variant="inverse" size="small" class="slds-var-m-right_small"></lightning-icon>
+                <h2>No data found within filter range.</h2>
+            </div>
+        </template>
+        <div style="height: 500px">
+            <lightning-datatable
+                key-field="Case_Id__c"
+                columns={columns}
+                data={data}
+                hide-checkbox-column
+                default-sort-direction={defaultSortDirection}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                onsort={onHandleSort}
+            ></lightning-datatable>
+            <template if:true={loading} class="slds-spinner_inline slds-var-p-top_medium">
+                <lightning-spinner variant="brand" alternative-text="Loading..." size="medium"></lightning-spinner>
+            </template>      
+        </div>
+    </lightning-card>
+</template>

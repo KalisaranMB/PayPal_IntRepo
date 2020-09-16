@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The time the product was deactivated from account (if any) --></help>
+    <label><!-- Time Deactivated --></label>
+    <name>Time_Deactivated__c</name>
+</CustomFieldTranslation>

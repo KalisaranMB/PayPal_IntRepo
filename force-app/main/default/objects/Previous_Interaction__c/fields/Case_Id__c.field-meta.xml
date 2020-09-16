@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Id__c</fullName>
+    <description>Case Id for the previous interaction</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Case Id for the previous interaction</inlineHelpText>
+    <label>Case Id</label>
+    <length>64</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

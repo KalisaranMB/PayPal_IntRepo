@@ -1,0 +1,48 @@
+<template>
+    <lightning-card>
+
+        <!-- TODO Create a Custom Badge Component 1. Current Badge doesn't support colors out of the box-->
+        <div>
+            <lightning-layout horizontal-align="space" size="12">
+                <lightning-layout-item size="3">
+                    <div class="header-column" >
+                        <lightning-avatar
+                        size="medium"
+                        src={profilePicture}
+                        initials="JL"
+                        alternative-text="Jennifer Lawrence"
+                        class=" pp-avatar slds-align_absolute-center slds-text-heading_large">
+                        </lightning-avatar><br/>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="9">
+                    <!-- Right Column -->
+                    <div class="badge-container">
+                        <lightning-layout multiple-rows=true>
+                            <lightning-layout-item>
+                                <div class="header-column" >
+                                    <span class="slds-badge slds-badge_inverse slds-theme_error">
+                                        <span class="slds-badge__icon slds-badge__icon_left slds-badge__icon_inverse">
+                                            <lightning-icon icon-name="utility:warning" alternative-text="warning" size="xx-small" variant="inverse"
+                                        title="xx-small size"></lightning-icon>
+                                        </span> Account Restrictions
+                                    </span>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item>
+                                <div class="header-column" >
+                                    <span class="slds-badge slds-badge_inverse slds-theme_error ">
+                                        <span class="slds-badge__icon slds-badge__icon_left slds-badge__icon_inverse">
+                                            <lightning-icon icon-name="utility:warning" alternative-text="warning" size="xx-small" variant="inverse"
+                                        title="xx-small size"></lightning-icon>
+                                        </span> Limitations
+                                    </span>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

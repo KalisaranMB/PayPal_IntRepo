@@ -1,0 +1,61 @@
+<template>
+    <lightning-card>
+
+        <!-- TODO Create a Custom Badge Component 1. Current Badge doesn't support colors out of the box-->
+        <div>
+            <lightning-layout horizontal-align="space" >
+                <lightning-layout-item size="3">
+                    <div class="header-column" >
+                        <lightning-avatar
+                        size="medium"
+                        src={profilePicture}
+                        initials={customerInitials}
+                        alternative-text={userInfo.Full_Name__c}
+                        class=" pp-avatar slds-align_absolute-center slds-text-heading_large">
+                        </lightning-avatar><br/>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="9">
+                    <!-- Right Column -->
+                    <div class="badge-container">
+                        <lightning-layout multiple-rows=true>
+                            <template if:true={hasLimitations}>
+                                <lightning-layout-item>
+                                    <div class="header-column" >
+                                        <span class="slds-badge slds-badge_inverse slds-theme_error">
+                                            <span class="slds-badge__icon slds-badge__icon_left slds-badge__icon_inverse">
+                                                <lightning-icon icon-name="utility:warning" alternative-text="warning" size="xx-small" variant="inverse"></lightning-icon>
+                                            </span> {labels.Limitations}
+                                        </span>
+                                    </div>
+                                </lightning-layout-item>
+                            </template>
+                            <template if:true={isManagedAccount}>
+                                <lightning-layout-item>
+                                    <div class="header-column" >
+                                        <span class="slds-badge slds-badge_inverse slds-theme_error ">
+                                            <span class="slds-badge__icon slds-badge__icon_left slds-badge__icon_inverse">
+                                                <lightning-icon icon-name="utility:warning" alternative-text="warning" size="xx-small" variant="inverse"></lightning-icon>
+                                            </span> {labels.ManagedAccount}
+                                        </span>
+                                    </div>
+                                </lightning-layout-item>
+                            </template>
+                            <template if:true={accountInfo.Is_Unregistered__c}>
+                                <lightning-layout-item>
+                                    <div class="header-column" >
+                                        <span class="slds-badge slds-badge_inverse slds-theme_default">
+                                            <span class="slds-badge__icon slds-badge__icon_left slds-badge__icon_inverse">
+                                                <lightning-icon icon-name="utility:warning" alternative-text="warning" size="xx-small" variant="inverse"></lightning-icon>
+                                            </span> {labels.Unregistered}
+                                        </span>
+                                    </div>
+                                </lightning-layout-item>
+                            </template>
+                        </lightning-layout>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

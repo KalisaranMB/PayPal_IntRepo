@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Strong_Link__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether account1 and account2 are strongly linked so that there is no need for validation while switching to that account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether account1 and account2 are strongly linked so that there is no need for validation while switching to that account.</inlineHelpText>
+    <label>Has Strong Link</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

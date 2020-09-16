@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates whether the account is a managed account or not --></help>
+    <label><!-- Is Managed Account --></label>
+    <name>Is_Managed_Account__c</name>
+</CustomFieldTranslation>
